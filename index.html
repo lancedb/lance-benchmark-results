@@ -1,0 +1,58 @@
+<html lang="en">
+    <head>
+        <!-- Load plotly.js into the DOM -->
+        <script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+        <title>Show benchmarks</title>
+    </head>
+
+    <body>
+        <div id='chart'><!-- Plotly chart will be drawn inside --></div>
+
+        <script lang="js">
+            d3.json("../rust/results.json", function(err, rows) {
+                function unpack(rows, key) {
+                    return rows.map(function(row) { return row[key]; });
+                }
+
+                let data = [];
+
+                // find unique names and commits
+                let groups = new Set();
+                rows.forEach(function(row) {
+                    groups.add([row.name, row.os, row.arch]);
+                });
+
+                // for each sorted group
+                [...groups].sort().forEach(function(group) {
+                    // filter rows
+                    let filtered = rows.filter(function(row) {
+                        return row.name === group[0] &&
+                            row.os === group[1] &&
+                            row.arch === group[2];
+                    });
+
+                    // create trace
+                    let trace = {
+                        type: "scatter",
+                        mode: "lines",
+                        name: group[0],
+                        x: unpack(filtered, 'datetime'),
+                        y: unpack(filtered, 'mean_duration_ns').map(function(value, index, array) {
+                            return array[index] = value / 1000000;
+                        }),
+                    };
+
+                    // add trace to data
+                    data.push(trace);
+                });
+
+                let layout = {
+                  title: 'Lance Rust Criterion Microbenchmarks',
+                };
+
+                Plotly.newPlot('chart', data, layout);
+            })
+        </script>
+    </body>
+</html>
