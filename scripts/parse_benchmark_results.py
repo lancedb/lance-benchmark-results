@@ -67,7 +67,7 @@ def parse_all(lance_root):
     return results
 
 
-def dedup(json_list, dedup_key):
+def dedup(json_list, dedup_keys):
     """
     Deduplicate a list of json objects by a key
 
@@ -75,8 +75,8 @@ def dedup(json_list, dedup_key):
     ----------
     json_list : list
         The list of json objects
-    dedup_key : str
-        The key to deduplicate
+    dedup_keys : list of str
+        The keys to deduplicate
 
     Returns
     -------
@@ -85,7 +85,8 @@ def dedup(json_list, dedup_key):
     """
     dedup_dict = {}
     for json_obj in json_list:
-        dedup_dict[json_obj[dedup_key]] = json_obj
+        key = tuple(json_obj[key] for key in dedup_keys)
+        dedup_dict[key] = json_obj
     return list(dedup_dict.values())
 
 
@@ -106,7 +107,7 @@ def main(output_path, lance_root=None, mode="merge"):
         if mode == "merge":
             with output_path.open() as f:
                 old_rs = json.load(f)
-            rs = dedup(old_rs + rs, "commit")
+            rs = dedup(old_rs + rs, ["commit", "name", "os", "arch"])
         else:
             raise ValueError(f"output-path {output_path} already exists")
 
