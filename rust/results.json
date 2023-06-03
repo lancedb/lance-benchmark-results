@@ -1289,100 +1289,100 @@
   {
     "name": "train_128d_4k",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 21984202.892166663,
-    "standard_error": 273356.57341286767
+    "mean_duration_ns": 22118552.28162699,
+    "standard_error": 254034.46621974948
   },
   {
     "name": "L2(auto-vectorization)",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1070262686.9,
-    "standard_error": 675537.6423616232
+    "mean_duration_ns": 1075992525.9,
+    "standard_error": 387264.78065033833
   },
   {
     "name": "train_128d_65535",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 186706990.87138888,
-    "standard_error": 5345297.399892182
+    "mean_duration_ns": 195331017.49103174,
+    "standard_error": 7453040.384045849
   },
   {
     "name": "L2(arrow_artiy)",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1951612928.1,
-    "standard_error": 1416421.6219908867
+    "mean_duration_ns": 1954343195.3,
+    "standard_error": 1269414.7226260698
   },
   {
     "name": "train_8d_65535",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 22604851.473960318,
-    "standard_error": 273182.53698891227
+    "mean_duration_ns": 22056572.924785715,
+    "standard_error": 210461.32270031527
   },
   {
     "name": "L2(simd)",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 251012010.8,
-    "standard_error": 345649.0385803606
+    "mean_duration_ns": 250075899.33333334,
+    "standard_error": 614898.4168871372
   },
   {
     "name": "Scan full dataset",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 2731788.998841037,
-    "standard_error": 19807.13711404659
+    "mean_duration_ns": 2725800.9374836604,
+    "standard_error": 6269.534792047866
   },
   {
     "name": "Ivf_PQ_Refine(d=128,top_k=10,nprobes=10, refine=2)",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 7004252.5064087305,
-    "standard_error": 13231.256467716743
+    "mean_duration_ns": 7114891.582185593,
+    "standard_error": 35618.488061649885
   },
   {
     "name": "Flat_Index(d=128,top_k=10,nprobes=10)",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 6627659.1951275505,
-    "standard_error": 16565.107780372244
+    "mean_duration_ns": 6745003.782590704,
+    "standard_error": 24509.56820119
   },
   {
     "name": "L2(arrow)",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 2694443129.0,
-    "standard_error": 501805.62029864127
+    "mean_duration_ns": 2691200326.4,
+    "standard_error": 636899.0137527026
   },
   {
     "name": "argmin(arrow)",
     "commit": "e5899a368e3ca961863021ae62ad19ba8afdce5a",
-    "datetime": "2023-06-02 16:15:26",
+    "datetime": "2023-06-03 00:25:09",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 30029698.37736268,
-    "standard_error": 19543.677176939866
+    "mean_duration_ns": 29913316.28313087,
+    "standard_error": 16523.597768607677
   }
 ]
