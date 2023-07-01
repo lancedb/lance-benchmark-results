@@ -20,11 +20,12 @@
                 // find unique names and commits
                 let groups = new Set();
                 rows.forEach(function(row) {
-                    groups.add([row.name, row.os, row.arch]);
+                    groups.add(JSON.stringify([row.name, row.os, row.arch]));
                 });
 
                 // for each sorted group
                 [...groups].sort().forEach(function(group) {
+                    group = JSON.parse(group);
                     // filter rows
                     let filtered = rows.filter(function(row) {
                         return row.name === group[0] &&
