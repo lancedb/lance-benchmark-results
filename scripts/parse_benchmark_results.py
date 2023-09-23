@@ -62,7 +62,7 @@ def parse_all(lance_root):
     """
     results = []
     for path in (lance_root / "rust" / "target" / "criterion").iterdir():        
-        if path.is_dir() and p.name != "report":
+        if path.is_dir() and path.name != "report":
             results.append(parse_one(path))
     return results
 
