@@ -61,11 +61,9 @@ def parse_all(lance_root):
         The root directory of the lance repo
     """
     results = []
-    projects = ["lance", "lance-linalg"]
-    for p in projects:
-        for path in (lance_root / "rust" / p / "target" / "criterion").iterdir():
-            if path.is_dir():
-                results.append(parse_one(path))
+    for path in (lance_root / "rust" / "target" / "criterion").iterdir():        
+        if path.is_dir() and p.name != "report":
+            results.append(parse_one(path))
     return results
 
 
