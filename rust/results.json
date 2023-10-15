@@ -18893,244 +18893,244 @@
   {
     "name": "L2(arrow_artiy) second rng seed",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1455917847.7,
-    "standard_error": 608972.1192845543
+    "mean_duration_ns": 1382711626.7,
+    "standard_error": 560399.1400660365
   },
   {
     "name": "train_128d_4k",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 9845699.204587301,
-    "standard_error": 35637.316761399146
+    "mean_duration_ns": 9535388.167694446,
+    "standard_error": 71204.31094213834
   },
   {
     "name": "Cosine(simd) second rng seed",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 208304848.06666666,
-    "standard_error": 126789.43795234528
+    "mean_duration_ns": 207671320.1666667,
+    "standard_error": 136647.47077541004
   },
   {
     "name": "L2(auto-vectorization)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1053377903.5,
-    "standard_error": 453309.32692244503
+    "mean_duration_ns": 1055636171.8,
+    "standard_error": 610474.4842535905
   },
   {
     "name": "train_128d_65535",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 75705230.55882937,
-    "standard_error": 1585958.1242351397
+    "mean_duration_ns": 77745392.19630952,
+    "standard_error": 1871634.5729080061
   },
   {
     "name": "Dot(f32, arrow_artiy)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1484431796.8,
-    "standard_error": 811441.5851035848
+    "mean_duration_ns": 1529813498.2,
+    "standard_error": 427206.476087226
   },
   {
     "name": "L2(auto-vectorization) second rng seed",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1047319673.2,
-    "standard_error": 873870.6704966945
+    "mean_duration_ns": 1049112021.5,
+    "standard_error": 341901.39086399705
   },
   {
     "name": "L2(arrow_artiy)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1371480377.6,
-    "standard_error": 548317.3040297618
+    "mean_duration_ns": 1374123847.2,
+    "standard_error": 1236253.9107253167
   },
   {
     "name": "train_8d_65535",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 91074981.85736111,
-    "standard_error": 2921630.9531258196
+    "mean_duration_ns": 91959987.98757938,
+    "standard_error": 3580149.663320464
   },
   {
     "name": "Dot(f32, SIMD)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 200359082.03333333,
-    "standard_error": 162141.1001822749
+    "mean_duration_ns": 200405497.56666666,
+    "standard_error": 144591.3687843108
   },
   {
     "name": "Dot(f32)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1041979131.4,
-    "standard_error": 422637.4267216263
+    "mean_duration_ns": 1041513024.9,
+    "standard_error": 914655.6624635402
   },
   {
     "name": "L2(simd)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 201222439.2,
-    "standard_error": 86328.34308411014
+    "mean_duration_ns": 201644870.1333333,
+    "standard_error": 70742.71678026629
   },
   {
     "name": "CreateIVF256,PQ96(d=768,metric=l2)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 101971578762.7,
-    "standard_error": 167227814.75208053
+    "mean_duration_ns": 98830343895.5,
+    "standard_error": 247374820.27200353
   },
   {
     "name": "Scan full dataset",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 843248.7451386924,
-    "standard_error": 824.0485982831614
+    "mean_duration_ns": 837918.1774464286,
+    "standard_error": 926.0733905616753
   },
   {
     "name": "Dot(half__binary16__f16, arrow_artiy)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 18896529007.9,
-    "standard_error": 5132126.387902468
+    "mean_duration_ns": 18898219824.5,
+    "standard_error": 7818139.336345471
   },
   {
     "name": "Cosine(simd)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 210170900.1666667,
-    "standard_error": 169463.81662081546
+    "mean_duration_ns": 209719432.23333332,
+    "standard_error": 121007.15272967618
   },
   {
     "name": "Dot(half__binary16__f16)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 11716642109.8,
-    "standard_error": 2106938.1676940233
+    "mean_duration_ns": 11528319014.8,
+    "standard_error": 3353584.652699024
   },
   {
     "name": "L2(simd) second rng seed",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 200095945.26666665,
-    "standard_error": 120668.92997520545
+    "mean_duration_ns": 202183673.8,
+    "standard_error": 85425.39261596202
   },
   {
     "name": "Ivf_PQ_Refine(d=128,top_k=10,nprobes=10, refine=2)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 2113406.202263038,
-    "standard_error": 12323.918453636774
+    "mean_duration_ns": 2692258.142885028,
+    "standard_error": 151626.73991292596
   },
   {
     "name": "Dot(f64)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1121435391.6,
-    "standard_error": 284263.3615718561
+    "mean_duration_ns": 1120265154.1,
+    "standard_error": 831803.086051139
   },
   {
     "name": "Flat_Index(d=128,top_k=10,nprobes=10)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1950226.133982684,
-    "standard_error": 33285.63951896804
+    "mean_duration_ns": 1860686.9521324143,
+    "standard_error": 2700.614590648239
   },
   {
     "name": "L2(arrow)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1695734962.2,
-    "standard_error": 566592.5329828
+    "mean_duration_ns": 1764092608.2,
+    "standard_error": 801963.3840155533
   },
   {
     "name": "CreateIVF256,PQ96(d=768,metric=cosine)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 151334385190.6,
-    "standard_error": 285603377.2081211
+    "mean_duration_ns": 149967946956.6,
+    "standard_error": 274933067.9784652
   },
   {
     "name": "argmin(arrow)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 8630579.178769786,
-    "standard_error": 8965.185658347977
+    "mean_duration_ns": 8543257.193858277,
+    "standard_error": 8640.341041235048
   },
   {
     "name": "Dot(f64, arrow_artiy)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1656418809.2,
-    "standard_error": 695463.0726806179
+    "mean_duration_ns": 1726629839.3,
+    "standard_error": 478518.64692736755
   },
   {
     "name": "Dot(f16, SIMD)",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 11827585600.0,
-    "standard_error": 2905820.1196779073
+    "mean_duration_ns": 11826527060.3,
+    "standard_error": 1715468.1194608
   },
   {
     "name": "L2(arrow) second rng seed",
     "commit": "7bef6ab0beac91c1df2ed3a16821e906c9882bd6",
-    "datetime": "2023-10-15 01:33:49",
+    "datetime": "2023-10-15 09:22:11",
     "os": "Linux",
     "arch": "x86_64",
-    "mean_duration_ns": 1763095723.8,
-    "standard_error": 347698.89467057615
+    "mean_duration_ns": 1686671786.2,
+    "standard_error": 398436.4064769449
   }
 ]
