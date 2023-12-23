@@ -51,20 +51,33 @@ def parse_one(path: Path):
     }
 
 
-def parse_all(lance_root):
+def parse_all(benchmark_root):
     """
     Parse all the benchmark results
 
     Parameters
     ----------
-    lance_root : Path
-        The root directory of the lance repo
+    benchmark_root : Path
+        The root directory of the rust benchmarks
     """
     results = []
-    for path in (lance_root / "rust" / "target" / "criterion").iterdir():        
-        if path.is_dir() and path.name != "report":
+    for path in benchmark_root.iterdir():
+        if not path.is_dir() or path.name.lower() == "report":
+            continue
+        if is_group(path):
+            results.extend(parse_all(path))
+        else:
             results.append(parse_one(path))
     return results
+
+
+def is_group(path):
+    """
+    Does this group contain multiple benchmarks
+    """
+    folders = ["base", "new"]
+    return sum([1 if p.name in folders else 0
+                for p in path.iterdir()]) < 2
 
 
 def dedup(json_list, dedup_keys):
@@ -100,7 +113,7 @@ def main(output_path, lance_root=None, mode="merge"):
         lance_root = Path().absolute()
     else:
         lance_root = Path(lance_root)
-    rs = parse_all(lance_root)
+    rs = parse_all(lance_root / "rust" / "target" / "criterion")
 
     output_path = Path(output_path).expanduser().absolute()
     if output_path.exists():
