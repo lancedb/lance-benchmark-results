@@ -34333,5 +34333,788 @@
     "arch": "x86_64",
     "mean_duration_ns": 14619245.53776077,
     "standard_error": 5953.297236342936
+  },
+  {
+    "name": "train_128d_4k",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 13192659.375436507,
+    "standard_error": 167086.24181464536
+  },
+  {
+    "name": "NormL2(f64, scalar)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1077687546.6,
+    "standard_error": 711737.1027195321
+  },
+  {
+    "name": "IVF10240,k=1,L2",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3250071.5672335597,
+    "standard_error": 3583.8194948685405
+  },
+  {
+    "name": "train_128d_65535",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 150469260.98880953,
+    "standard_error": 882240.806240219
+  },
+  {
+    "name": "Cosine(f64, auto-vectorized)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 630888474.5,
+    "standard_error": 372120.5515974793
+  },
+  {
+    "name": "Dot(f32, arrow_artiy)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1036745928.9,
+    "standard_error": 775643.8589544614
+  },
+  {
+    "name": "train_8d_65535",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 121799351.78579363,
+    "standard_error": 4192852.1064021303
+  },
+  {
+    "name": "baseline_equality",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 228679821.5333333,
+    "standard_error": 1319408.3569804763
+  },
+  {
+    "name": "IVF65536,k=10,Cosine",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 21662992.34488889,
+    "standard_error": 13791.17255437279
+  },
+  {
+    "name": "IVF10240,k=10,Cosine",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3234073.4590380406,
+    "standard_error": 3363.289367077156
+  },
+  {
+    "name": "IVF10240,k=10,L2",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3262735.683585601,
+    "standard_error": 2603.1031610069444
+  },
+  {
+    "name": "Dot(f32, SIMD)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 210033803.1666667,
+    "standard_error": 62711.292075020414
+  },
+  {
+    "name": "IVF65536,k=1,L2",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 21504124.13423016,
+    "standard_error": 19097.218067688053
+  },
+  {
+    "name": "L2(half__binary16__f16, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 5273909176.3,
+    "standard_error": 875286.038789223
+  },
+  {
+    "name": "L2(f32, scalar)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1036682887.6,
+    "standard_error": 478160.48510023864
+  },
+  {
+    "name": "Dot(bf16, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 12536761004.2,
+    "standard_error": 2262276.931214401
+  },
+  {
+    "name": "Dot(f32, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 214368258.03333336,
+    "standard_error": 45988.47139820593
+  },
+  {
+    "name": "CreateIVF256,PQ96(d=768,metric=l2)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 146826611304.0,
+    "standard_error": 970768110.0490952
+  },
+  {
+    "name": "Cosine(f64, scalar)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1152586445.5,
+    "standard_error": 414776.7458606268
+  },
+  {
+    "name": "L2(f64, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 428486160.85,
+    "standard_error": 209779.40586849808
+  },
+  {
+    "name": "Dot(half__binary16__f16, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3552213945.6,
+    "standard_error": 1516654.7539057506
+  },
+  {
+    "name": "compute_centroids(L2)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 137.25382860506463,
+    "standard_error": 0.07982776896804082
+  },
+  {
+    "name": "fill_i64",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 204481.31612680777,
+    "standard_error": 60.11606175191836
+  },
+  {
+    "name": "fill_i16",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 200441.40121521222,
+    "standard_error": 160.0014013861995
+  },
+  {
+    "name": "fill_varbin",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 7827196.974041006,
+    "standard_error": 5250.411604143465
+  },
+  {
+    "name": "fill_utf8",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 8575869.924054835,
+    "standard_error": 6108.566562915718
+  },
+  {
+    "name": "fill_i32",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 200718.02520042745,
+    "standard_error": 51.7898419355874
+  },
+  {
+    "name": "fill_i8",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 194057.29702235878,
+    "standard_error": 569.0895427422319
+  },
+  {
+    "name": "Scan full dataset",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1048013.9665196609,
+    "standard_error": 1576.136743800975
+  },
+  {
+    "name": "NormL2(half__binary16__f16, scalar)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1753852868.8,
+    "standard_error": 857105.7385589564
+  },
+  {
+    "name": "Dot(half__binary16__f16, arrow_artiy)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 2029036664.2,
+    "standard_error": 1330588.912404307
+  },
+  {
+    "name": "windexed_inequality",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1115061577.8,
+    "standard_error": 24586085.653890196
+  },
+  {
+    "name": "norm_l2(bf16, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 8093903395.8,
+    "standard_error": 3352437.7087865975
+  },
+  {
+    "name": "Cosine(half__bfloat__bf16, scalar)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 15072837871.1,
+    "standard_error": 3607138.8725011195
+  },
+  {
+    "name": "rand_i32",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 2850283.0725210817,
+    "standard_error": 2311.0619813229546
+  },
+  {
+    "name": "rand_utf8",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 2713849.0885037347,
+    "standard_error": 3569.5481390099512
+  },
+  {
+    "name": "rand_varbin",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 2046312.3781710758,
+    "standard_error": 1015.6491784675285
+  },
+  {
+    "name": "rand_vec",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3608777.6589117823,
+    "standard_error": 1339.2252359131455
+  },
+  {
+    "name": "rand_i8",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 11544510.980704367,
+    "standard_error": 3938.087942311235
+  },
+  {
+    "name": "rand_dict_i32_utf8",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 32352123.572698407,
+    "standard_error": 26536.420853234784
+  },
+  {
+    "name": "rand_i64",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1376306.0029169628,
+    "standard_error": 436.4658294419897
+  },
+  {
+    "name": "rand_i16",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 5761358.872708334,
+    "standard_error": 8249.988901169358
+  },
+  {
+    "name": "NormL2(f64, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 405134315.3,
+    "standard_error": 906632.2992225251
+  },
+  {
+    "name": "Cosine(half__bfloat__bf16, auto-vectorized)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 12498424898.3,
+    "standard_error": 3774030.2645467417
+  },
+  {
+    "name": "NormL2(f32, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 216893729.6,
+    "standard_error": 153258.37577604427
+  },
+  {
+    "name": "Ivf_PQ_Refine(d=128,top_k=10,nprobes=10, refine=2)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 2299350.661774801,
+    "standard_error": 4632.423493438555
+  },
+  {
+    "name": "baseline_inequality",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 819431379.7,
+    "standard_error": 2666127.9865882364
+  },
+  {
+    "name": "Flat_Index(d=128,top_k=10,nprobes=10)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 2007992.3224206348,
+    "standard_error": 2141.319123933906
+  },
+  {
+    "name": "IVF65536,k=1,Cosine",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 21426884.904761903,
+    "standard_error": 29273.824978178982
+  },
+  {
+    "name": "L2(f32, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 243779863.4,
+    "standard_error": 126548.7388801532
+  },
+  {
+    "name": "IVF65536,k=10,L2",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 21520192.417746034,
+    "standard_error": 7404.99999616827
+  },
+  {
+    "name": "L2(half__binary16__f16, scalar)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 6601369805.5,
+    "standard_error": 2157962.7524629785
+  },
+  {
+    "name": "L2(f64, scalar)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1116468245.4,
+    "standard_error": 732968.9322261784
+  },
+  {
+    "name": "Cosine(f32, auto-vectorized)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 239194249.3333333,
+    "standard_error": 199644.77087484678
+  },
+  {
+    "name": "IVF10240,k=50,L2",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3238008.2852162016,
+    "standard_error": 2563.9212889726214
+  },
+  {
+    "name": "compute_centroids(Cosine)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 136.89750158477688,
+    "standard_error": 0.0898623350365809
+  },
+  {
+    "name": "CreateIVF256,PQ96(d=768,metric=cosine)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 142922082872.7,
+    "standard_error": 1311264643.8525975
+  },
+  {
+    "name": "windexed_is_in",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 15007130.484948978,
+    "standard_error": 15734.09526568137
+  },
+  {
+    "name": "argmin(arrow)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 8506751.851865277,
+    "standard_error": 1884.4046452786313
+  },
+  {
+    "name": "IVF65536,k=50,L2",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 21709195.333507936,
+    "standard_error": 12437.057742680172
+  },
+  {
+    "name": "IVF10240,k=50,Cosine",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3251699.229258787,
+    "standard_error": 2841.7697987985844
+  },
+  {
+    "name": "Cosine(half__binary16__f16, auto-vectorized)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 7077750273.4,
+    "standard_error": 1293831.694820523
+  },
+  {
+    "name": "L2",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 978273.9998348694,
+    "standard_error": 344.27483635187156
+  },
+  {
+    "name": "Dot(f64, arrow_artiy)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1107135465.7,
+    "standard_error": 374622.5120266512
+  },
+  {
+    "name": "Dot(f16, SIMD)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3551353774.0,
+    "standard_error": 1801740.489593437
+  },
+  {
+    "name": "L2(f32, simd)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 253228435.8,
+    "standard_error": 167298.46823735588
+  },
+  {
+    "name": "IVF65536,k=50,Cosine",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 21589580.112214286,
+    "standard_error": 13157.383066811468
+  },
+  {
+    "name": "Cosine",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 957436.0777802579,
+    "standard_error": 859.513689877452
+  },
+  {
+    "name": "NormL2(f32, scalar)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1029064665.4,
+    "standard_error": 730976.9940031705
+  },
+  {
+    "name": "Cosine(f32, scalar)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 1083063866.2,
+    "standard_error": 452270.18019942474
+  },
+  {
+    "name": "0.25",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 6717799.023296486,
+    "standard_error": 1944.4999809389853
+  },
+  {
+    "name": "0.75",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3564785.249386447,
+    "standard_error": 1657.7324818684108
+  },
+  {
+    "name": "1.0",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 309913.55007072666,
+    "standard_error": 199.83751665680094
+  },
+  {
+    "name": "0.0",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 206545.26242451297,
+    "standard_error": 81.08584719422956
+  },
+  {
+    "name": "Ivf_PQ_NoCache(d=128,top_k=10,nprobes=32, refine=1)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 7691852.202013889,
+    "standard_error": 13294.606856167553
+  },
+  {
+    "name": "Dot(f64, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 415547912.1,
+    "standard_error": 130976.75176770952
+  },
+  {
+    "name": "NormL2(half__binary16__f16, auto-vectorization)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3234362393.4,
+    "standard_error": 2155674.1104861284
+  },
+  {
+    "name": "Cosine(simd,f32x8) rng seed",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 4846534.085540937,
+    "standard_error": 2619.9895006505153
+  },
+  {
+    "name": "Cosine(half__binary16__f16, scalar)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 9803301554.3,
+    "standard_error": 3336662.0519019305
+  },
+  {
+    "name": "norm_l2(f32, SIMD)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 204474113.53333333,
+    "standard_error": 139160.90933280543
+  },
+  {
+    "name": "IVF10240,k=1,Cosine",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3215600.0111124795,
+    "standard_error": 2621.4182047712998
+  },
+  {
+    "name": "L2(simd,f32x8)",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 3131414.6203584652,
+    "standard_error": 2644.643602289368
+  },
+  {
+    "name": "16",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 201473.8873157658,
+    "standard_error": 129.79813886997024
+  },
+  {
+    "name": "i32",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 200134.07948326247,
+    "standard_error": 155.52396785225557
+  },
+  {
+    "name": "i64",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 204237.44809453576,
+    "standard_error": 182.8730281345574
+  },
+  {
+    "name": "i8",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 278833.0401442891,
+    "standard_error": 226.40290053586847
+  },
+  {
+    "name": "windexed_equality",
+    "commit": "3ae29b8bd298f0ca5808efb719b5ecb34e829ecb",
+    "datetime": "2024-01-05 02:04:25",
+    "os": "Linux",
+    "arch": "x86_64",
+    "mean_duration_ns": 14845129.482040817,
+    "standard_error": 6927.050854781664
   }
 ]
