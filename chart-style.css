@@ -63,12 +63,6 @@
 
 }
 
-
-/* .legend circle {
-    fill: white;
-    stroke-width: 2px;
-} */
-
 .legend-item.active {
     background-color: #f4f4f4; /* Example active state style */
 }
@@ -80,22 +74,17 @@
     stroke-linecap: round;
 }
 
-/* Additional styles for the chart elements */
 .chart-background {
     fill: #f8f9fa;
 }
-
 .grid line {
     stroke: lightgrey;
     stroke-opacity: 0.7;
     shape-rendering: crispEdges;
 }
-
 .grid path {
     stroke-width: 0;
 }
-
-
 .chart-title {
     fill: #333; /* Title text color, adjust as needed */
     font-family: Arial, sans-serif; /* Font family, adjust as needed */
