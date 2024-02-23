@@ -1,0 +1,99 @@
+/* chart-style.css */
+.main-container {
+    max-width: 1800px; /* Adjust this value based on your design preference */
+    margin: 0; /* Centers the container */
+    display: flex; /* Enables Flexbox */
+    align-items: flex-start; /* Aligns items at the start of the container vertically */
+    justify-content: space-between; 
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.tooltip {
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    width: auto;
+    padding: 8px;
+    font: 15px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+#chart-area {
+    display: flex;
+    margin-left: 100px;
+    flex-direction: row;
+    justify-content: space-between; /* Adjust from space-between to flex-start */
+    width: 100%;
+}
+#chart {
+    flex-grow: 1;
+}
+
+#legend {
+    flex: 1;
+    height: auto; /* Allows the height to adjust based on content up to a max-height */
+    margin-left: 10px; /* Ensures some space between the chart and legend */
+    /* Additional styling for the legend */
+}
+
+#legend .legend-title{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#legend .legend-items {
+    height: 200px; /* Fixed height to enable vertical scrolling */
+    overflow-y: auto; /* Enables vertical scrolling if content overflows */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    width: 350px; /* Adjust as needed to fit content without forcing horizontal scroll */
+    /* Additional styles as needed */
+
+}
+
+.legend-item.active {
+    background-color: #f4f4f4; /* Example active state style */
+}
+
+.line {
+    fill: none;
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.chart-background {
+    fill: #f8f9fa;
+}
+.grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+}
+.grid path {
+    stroke-width: 0;
+}
+.chart-title {
+    fill: #333; /* Title text color, adjust as needed */
+    font-family: Arial, sans-serif; /* Font family, adjust as needed */
+    font-weight: bold; /* Optional: makes the title text bold */
+}
+
+h1 {
+    font-size: 24px; /* Adjust the font size as needed */
+    text-align: center; /* Center-align the title */
+    margin-top: 20px; /* Add some space above the title */
+    /* Other styling properties as needed */
+}
