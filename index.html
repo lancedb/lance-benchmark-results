@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Timeseries plot for</title>
+        <title>Timeseries plot for lanceDB benchmarks </title>
         <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
         <link rel="stylesheet" href="chart-style.css">
     </head>
@@ -16,6 +16,7 @@
         
         <div id="legend">
       </div>
+
     </div>
         <script>
             // Load the data
@@ -44,6 +45,10 @@ d3.json("rust/results.json").then(function(data) {
     const x = d3.scaleTime()
     .domain(d3.extent(data, d => d.datetime)) // Assuming data is your dataset and datetime is your date field
     .range([0, width]); 
+
+    // svg.append("g")
+    //   .attr("transform", `translate(0,${height})`)
+    //   .call(d3.axisBottom(x));
 
     // Add X axis label
     svg.append("text")             
@@ -207,6 +212,8 @@ function toggleHighlighting(selectedName) {
     }
 }
 });
+
+
 
 
         </script>
