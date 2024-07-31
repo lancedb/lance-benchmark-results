@@ -1,59 +1,221 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Load plotly.js into the DOM -->
-        <script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
-        <title>Show benchmarks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Timeseries plot for lanceDB benchmarks </title>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <link rel="stylesheet" href="chart-style.css">
     </head>
-
     <body>
-        <div id='chart'><!-- Plotly chart will be drawn inside --></div>
+      <div class="main-container">
 
-        <script lang="js">
-            d3.json("rust/results.json", function(err, rows) {
-                function unpack(rows, key) {
-                    return rows.map(function(row) { return row[key]; });
-                }
+      <div id="chart-area">
+      
+        <div id="chart"></div>
+        
+        <div id="legend">
+      </div>
 
-                let data = [];
+    </div>
+        <script>
+            // Load the data
+d3.json("rust/results.json").then(function(data) {
+  
+    // Process the data
+    data.forEach(function(d) {
+        d.datetime = new Date(d.datetime); // Convert datetime to Date object
+        d.mean_duration_ms = d.mean_duration_ns / 1000000; // Convert to milliseconds
+    });
 
-                // find unique names and commits
-                let groups = new Set();
-                rows.forEach(function(row) {
-                    groups.add(JSON.stringify([row.name, row.os, row.arch]));
-                });
+    // Set the dimensions and margins of the graph
+    const margin = {top: 100, right: 150, bottom: 250, left: 200},
+        width = 1600 - margin.left - margin.right,
+        height = 1000 - margin.top - margin.bottom;
 
-                // for each sorted group
-                [...groups].sort().forEach(function(group) {
-                    group = JSON.parse(group);
-                    // filter rows
-                    let filtered = rows.filter(function(row) {
-                        return row.name === group[0] &&
-                            row.os === group[1] &&
-                            row.arch === group[2];
-                    });
+    // Append the svg object to the body of the page
+    const svg = d3.select("#chart")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
 
-                    // create trace
-                    let trace = {
-                        type: "scatter",
-                        mode: "lines",
-                        name: group[0],
-                        x: unpack(filtered, 'datetime'),
-                        y: unpack(filtered, 'mean_duration_ns').map(function(value, index, array) {
-                            return array[index] = value / 1000000;
-                        }),
-                    };
+    // Add X axis
+    const x = d3.scaleTime()
+    .domain(d3.extent(data, d => d.datetime)) // Assuming data is your dataset and datetime is your date field
+    .range([0, width]); 
 
-                    // add trace to data
-                    data.push(trace);
-                });
+    // svg.append("g")
+    //   .attr("transform", `translate(0,${height})`)
+    //   .call(d3.axisBottom(x));
 
-                let layout = {
-                  title: 'Lance Rust Criterion Microbenchmarks',
-                };
+    // Add X axis label
+    svg.append("text")             
+    .attr("transform",
+          "translate(" + (width/2) + " ," + 
+                         (height + margin.top + 20) + ")") // Position below the x-axis
+    .style("text-anchor", "middle")
+    .style("font-size", "24px")
+    .text("Date"); 
+      const xAxis = d3.axisBottom(x)
+   .tickFormat(d3.timeFormat("%Y-%m-%d"));
 
-                Plotly.newPlot('chart', data, layout);
-            })
+    
+   d3.selectAll(".axis text")
+    .style("font-size", "100px"); 
+
+    svg.append("g")
+   .attr("class", "x-axis") // It's good practice to add a class for styling and future selections
+   .attr("transform", `translate(0,${height})`) // Moves the x-axis to the bottom of the chart area
+   .call(xAxis)
+   .selectAll("text")  
+     .style("text-anchor", "end")
+     .style("font-size", "18px")
+     .attr("dx", "-.8em")
+     .attr("dy", ".15em")
+     .attr("transform", "rotate(-65)"); 
+
+    // Add Y axis
+    svg.append("text")
+    .attr("transform", "rotate(-90)") // Rotate to align along the y-axis
+    .attr("y", 10 - margin.left) // Position to the left of the y-axis
+    .attr("x",0 - (height / 2))
+    .attr("dy", "1em") // Adjust distance from the axis
+    .style("text-anchor", "middle")
+    .style("font-size", "24px")
+    .text("Avg. Duration (ms)"); 
+
+    svg.append("text") // Append a text element to your SVG container
+   .attr("class", "chart-title") // Optional: for styling via CSS
+   .attr("x", width / 2) // Position the title in the center of the chart
+   .attr("y", 0 - (margin.top / 2)) // Position the title above the chart, adjust as needed
+   .attr("text-anchor", "middle") // Ensure the text is centered
+   .style("font-size", "30px") // Set the font size, adjust as needed
+   .text("LanceDB microbenchmarks"); // The text of your title
+
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(data, d => d.mean_duration_ms)])
+      .range([height, 0]);
+    svg.append("g")
+      .style("font-size", "18px")
+      .call(d3.axisLeft(y));
+
+
+    // Group the data
+    const sumstat = d3.group(data, d => d.name);
+    const color = d3.scaleOrdinal()
+    .domain(Array.from(sumstat.keys())) // Extracting the unique names from sumstat
+    .range(d3.schemeTableau10);
+
+    // Draw the lines
+    sumstat.forEach(function(value, key) {
+        svg.append("path")
+          .datum(value)
+          .attr("fill", "none")
+          .attr("stroke", color(key))
+          .attr("stroke-width", 1.5)
+          .attr("d", d3.line()
+            .x(function(d) { return x(d.datetime); })
+            .y(function(d) { return y(d.mean_duration_ms); })
+          );
+    });
+
+    // Tooltip
+    const tooltip = d3.select("#chart").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+    svg.selectAll(".dot")
+      .data(data)
+      .enter()
+      .append("circle")
+        .attr("class", "dot")
+        .attr("data-name", d => d.name) 
+        .attr("cx", function(d) { return x(d.datetime); })
+        .attr("cy", function(d) { return y(d.mean_duration_ms); })
+        .attr("r", 5)
+        .attr("fill", function(d) { return color(d.name); })
+        .on("mouseover", function(event, d) {
+        tooltip.transition().duration(200).style("opacity", .9);
+        tooltip.html(`Benchmark: ${d.name}<br>Date: ${d.datetime.toLocaleString('en-US', options)}<br>mean_duration_ms: ${d.mean_duration_ms.toFixed(2)} ms`)
+            .style("left", (event.pageX + 20) + "px")
+            .style("top", (event.pageY - 20) + "px");
+    })
+    .on("mouseout", function(d) {
+        tooltip.transition().duration(500).style("opacity", 0);
+    });
+
+    // Legend
+
+const legendContainer = d3.select("#legend");
+
+// Append the legend title
+legendContainer.append("div")
+    .attr("class", "legend-title")
+    .style("font-size", "26px")
+    .text("Benchmarks");
+
+// Proceed to append scrollable legend items into .legend-items
+const legendItemsContainer = legendContainer.append("div")
+    .attr("class", "legend-items"); 
+
+sumstat.forEach((values, name) => {
+    // Create a container for each legend item
+    const legendItem = legendItemsContainer.append("div")
+        .attr("class", "legend-item")
+        .style("display", "flex")
+        .style("font-size", "20px")
+        .style("align-items", "center")
+        .style("margin-bottom", "5px")
+        .style("cursor", "pointer")
+        .on("click", function(event) {
+            // Toggle highlighting corresponding data points
+            toggleHighlighting(name);
+        });
+
+    // Create a colored square for each legend item
+    legendItem.append("div")
+        .style("width", "20px")
+        .style("height", "20px")
+        .style("margin-right", "10px")
+        .style("background-color", color(name));
+
+    // Add the name of the group to the legend item
+    legendItem.append("span")
+        .text(name);
+});
+
+
+
+// Function to toggle highlighting of data points
+let lastClicked = null; // Keep track of the last clicked legend item
+function toggleHighlighting(selectedName) {
+    const dots = d3.select("#chart").selectAll("circle"); // Assuming your data points are circles
+
+    if (lastClicked === selectedName) {
+        // If clicking the same item, reset all
+        dots.style("opacity", 1).attr("r", 5); // Reset to default styles
+        lastClicked = null; // Reset tracking variable
+    } else {
+        // Dim all dots
+        dots.style("opacity", 0.2).attr("r", 5);
+
+        // Highlight the dots that match the selected legend item
+        dots.filter(d => d.name === selectedName)
+            .style("opacity", 1)
+            .attr("r", 8); // Optionally increase the size for emphasis
+
+        lastClicked = selectedName; // Update tracking variable
+    }
+}
+});
+
+
+
+
         </script>
     </body>
 </html>
