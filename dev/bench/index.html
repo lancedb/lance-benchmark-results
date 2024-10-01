@@ -181,7 +181,7 @@
               datasets: [
                 {
                   label: name,
-                  data: dataset.map(d => d.bench.value),
+                  data: dataset.map(d => d.bench.value / 1000000),
                   borderColor: color,
                   backgroundColor: color + '60', // Add alpha for #rrggbbaa
                 }
@@ -201,7 +201,7 @@
                   {
                     scaleLabel: {
                       display: true,
-                      labelString: dataset.length > 0 ? dataset[0].bench.unit : '',
+                      labelString: "ms / iter",
                     },
                     ticks: {
                       beginAtZero: true,
