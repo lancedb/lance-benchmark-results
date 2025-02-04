@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738615574678,
+  "lastUpdate": 1738661876414,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -39663,6 +39663,364 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 443,
             "range": "± 4",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Rob Meng",
+            "username": "chebbyChefNEQ",
+            "email": "rob.xu.meng@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "42722fb7ef663b391a29b1f461a714d58292ee6c",
+          "message": "feat: allow replacement of entire datafile when the schema lines up correctly (#3408)\n\nFor internal design doc see notion or ping me\r\n\r\nWhat this PR implements\r\n\r\n![image](https://github.com/user-attachments/assets/85219024-a4a4-4b9a-bfb7-2b2f4990e68d)\r\n\r\nPlan of attack:\r\n* This PR: basic functionality, i.e. when there is no conflict calling\r\nthis tx should just work\r\n* Next PR: implement more fine-grained conflict resolution\r\n* Potential future PR (when time permits): Allow partial replacement of\r\na datafile. This can be done by \"dropping\" column indice in a datafile,\r\nthereby dropping the column in favor of another\r\n\r\n\r\nTODO:\r\n- [x] proto definition of the new transaction\r\n- [x] simple rust tests\r\n- [x] test error handling\r\n- [x] PR desc\r\n- [x] python tests\r\n- [x] implement conflict detection",
+          "timestamp": "2025-02-03T22:28:12Z",
+          "url": "https://github.com/lancedb/lance/commit/42722fb7ef663b391a29b1f461a714d58292ee6c"
+        },
+        "date": 1738661875564,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "Cosine(half::bfloat::bf16, scalar)",
+            "value": 11713761935,
+            "range": "± 61388895",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(half::bfloat::bf16, auto-vectorized)",
+            "value": 427372460,
+            "range": "± 7370297",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(half::binary16::f16, scalar)",
+            "value": 5160971786,
+            "range": "± 35718400",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(half::binary16::f16, auto-vectorized)",
+            "value": 279394312,
+            "range": "± 3550770",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(f32, scalar)",
+            "value": 757496599,
+            "range": "± 12694323",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(f32, auto-vectorized)",
+            "value": 338599955,
+            "range": "± 1919652",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(f64, scalar)",
+            "value": 1176774938,
+            "range": "± 1899669",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(f64, auto-vectorized)",
+            "value": 713235659,
+            "range": "± 15049491",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(simd,f32x8) rng seed",
+            "value": 4250113,
+            "range": "± 81923",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(half::binary16::f16, arrow_artiy)",
+            "value": 865476235,
+            "range": "± 18611208",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(half::binary16::f16, auto-vectorization)",
+            "value": 276200478,
+            "range": "± 3858772",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f16, SIMD)",
+            "value": 271321680,
+            "range": "± 3621981",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(bf16, auto-vectorization)",
+            "value": 2027718494,
+            "range": "± 23739661",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f32, arrow_artiy)",
+            "value": 670000952,
+            "range": "± 8703457",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f32, auto-vectorization)",
+            "value": 324252707,
+            "range": "± 1132812",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f32, SIMD)",
+            "value": 322536707,
+            "range": "± 1189880",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f64, arrow_artiy)",
+            "value": 1009094630,
+            "range": "± 5368682",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f64, auto-vectorization)",
+            "value": 607362912,
+            "range": "± 1649439",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "train_128d_4k",
+            "value": 5265878,
+            "range": "± 127676",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "train_128d_65535",
+            "value": 83635371,
+            "range": "± 1161495",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_membership_128d_65535",
+            "value": 24412957421,
+            "range": "± 156326615",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "train_8d_65535",
+            "value": 58518647,
+            "range": "± 4146972",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(half::binary16::f16, scalar)",
+            "value": 4887560340,
+            "range": "± 37828150",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(half::binary16::f16, auto-vectorization)",
+            "value": 288475228,
+            "range": "± 2613655",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(f32, scalar)",
+            "value": 673515504,
+            "range": "± 8127520",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(f32, auto-vectorization)",
+            "value": 347552502,
+            "range": "± 1145076",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(f32, simd)",
+            "value": 370019906,
+            "range": "± 2660717",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(f64, scalar)",
+            "value": 1050669147,
+            "range": "± 8175204",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(f64, auto-vectorization)",
+            "value": 648494862,
+            "range": "± 1503411",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(simd,f32x8)",
+            "value": 3311400,
+            "range": "± 90484",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(uint8, scalar)",
+            "value": 134153680,
+            "range": "± 977404",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(uint8, auto-vectorization)",
+            "value": 139494667,
+            "range": "± 1760119",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(half::bfloat::bf16, scalar)",
+            "value": 4662167864,
+            "range": "± 33152640",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(half::bfloat::bf16, auto-vectorization)",
+            "value": 2022166825,
+            "range": "± 14822416",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(half::binary16::f16, scalar)",
+            "value": 878544094,
+            "range": "± 16051828",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(half::binary16::f16, auto-vectorization)",
+            "value": 383151124,
+            "range": "± 7528414",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(half::binary16::f16, SIMD)",
+            "value": 254809320,
+            "range": "± 1624907",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(f32, scalar)",
+            "value": 666249283,
+            "range": "± 8405447",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(f32, auto-vectorization)",
+            "value": 297093332,
+            "range": "± 1333573",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(f32, SIMD)",
+            "value": 295348071,
+            "range": "± 1618009",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(f64, scalar)",
+            "value": 940465815,
+            "range": "± 3483957",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(f64, auto-vectorization)",
+            "value": 602482770,
+            "range": "± 1718115",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 1741864927,
+            "range": "± 52625920",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 817585,
+            "range": "± 14934",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert(1000000)",
+            "value": 1351640,
+            "range": "± 29623",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 2209624808,
+            "range": "± 166383103",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 3315285906,
+            "range": "± 94221317",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 101095,
+            "range": "± 4376",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 170574,
+            "range": "± 9938",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 479816,
+            "range": "± 31490",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 524012,
+            "range": "± 19930",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 583134,
+            "range": "± 27455",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 372,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 385,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 391,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 446,
+            "range": "± 5",
             "unit": "ns/iter"
           }
         ]
