@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1749288502699,
+  "lastUpdate": 1749374932506,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -76237,6 +76237,280 @@ window.BENCHMARK_DATA = {
             "name": "NormL2(f64, auto-vectorization)",
             "value": 259350076,
             "range": "± 365299",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jack Ye",
+            "username": "jackye1995",
+            "email": "yezhaoqin@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "96262f0040d241cbdbda950c00e7c87cd36bfb45",
+          "message": "feat: rebase conflict between rewrite and frag reuse index cleanup (#3952)\n\nThis PR ensures the following combination of operations can correctly\nresolve conflicts:\n- rewrite with FRI against any normal index update: succeed\n- any normal index update against rewrite with FRI: succeed\n- rewrite with FRI against rewrite with FRI: fail (could be optimized in\nthe future to rebase)\n- rewrite with FRI against FRI cleanup: succeed after rebase\n- FRI cleanup against rewrite with FRI: succeed after rebase\n-  FRI cleanup against FRI cleanup: fail\n\nIn addition, I did a full refactoring of the content in\n`conflict_resolver` and `transaction` to make sure we do not need to\ncompute some states repeatedly (e.g. modified_fragment_ids) and the\nconflict resolution logic all lives inside `conflict_resolver` instead\nof being spread across multiple modules. It also removes the redundant\nlayer of `Compatible`, `Retryable` and `Incompatible` enums purely to be\nmatched in `check_txn` and then being translated to `Ok` or\n`RetryableConflictError` and `ConflictError`.\n\nWith this refactoring, developers can easily find where to modify\nconflict resolution behavior of any combination of transactions:\n- check the rebase logic of A against B: go to function `check_A_txn`\nand go to match case for `B`.\n- check rebase finish logic of A: go to function `finish_A`\n\nOnce we implement cases like rebasing rewrite against update/delete, I\nexpect some operations in `check_delete_update_txn` or\n`finish_delete_update` can be extracted to be shared, but that can be\nleft to the next PRs.\n\nCloses #3942",
+          "timestamp": "2025-06-07T21:45:49Z",
+          "url": "https://github.com/lancedb/lance/commit/96262f0040d241cbdbda950c00e7c87cd36bfb45"
+        },
+        "date": 1749374931846,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "Cosine(half::bfloat::bf16, scalar)",
+            "value": 11725376609,
+            "range": "± 1990341",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(half::bfloat::bf16, auto-vectorized)",
+            "value": 687039482,
+            "range": "± 1471590",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(half::binary16::f16, scalar)",
+            "value": 3176750793,
+            "range": "± 156294",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(half::binary16::f16, auto-vectorized)",
+            "value": 223000803,
+            "range": "± 71985",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(f32, scalar)",
+            "value": 1732704741,
+            "range": "± 108190",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(f32, auto-vectorized)",
+            "value": 142190932,
+            "range": "± 521517",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(f64, scalar)",
+            "value": 806174873,
+            "range": "± 81932",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(f64, auto-vectorized)",
+            "value": 447400932,
+            "range": "± 533391",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Cosine(simd,f32x8) rng seed",
+            "value": 2738612,
+            "range": "± 723",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(half::binary16::f16, arrow_artiy)",
+            "value": 2898934917,
+            "range": "± 56146",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(half::binary16::f16, auto-vectorization)",
+            "value": 206618502,
+            "range": "± 15631",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f16, SIMD)",
+            "value": 206320178,
+            "range": "± 63368",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(bf16, auto-vectorization)",
+            "value": 309730266,
+            "range": "± 15049",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f32, arrow_artiy)",
+            "value": 654966275,
+            "range": "± 69757",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f32, auto-vectorization)",
+            "value": 130086382,
+            "range": "± 61818",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f32, SIMD)",
+            "value": 130884951,
+            "range": "± 249414",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f64, arrow_artiy)",
+            "value": 736420098,
+            "range": "± 14598",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "Dot(f64, auto-vectorization)",
+            "value": 259010842,
+            "range": "± 52308",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "train_128d_4k",
+            "value": 6164898,
+            "range": "± 139062",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "train_128d_65535",
+            "value": 74682376,
+            "range": "± 950049",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_membership_128d_65535",
+            "value": 15663306099,
+            "range": "± 129633245",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "train_8d_65535",
+            "value": 35649959,
+            "range": "± 1493440",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(half::binary16::f16, scalar)",
+            "value": 2915471528,
+            "range": "± 134551",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(half::binary16::f16, auto-vectorization)",
+            "value": 213172882,
+            "range": "± 103572",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(f32, scalar)",
+            "value": 655030679,
+            "range": "± 14548",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(f32, auto-vectorization)",
+            "value": 138852645,
+            "range": "± 87289",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(f32, simd)",
+            "value": 140006460,
+            "range": "± 96363",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(f64, scalar)",
+            "value": 750869423,
+            "range": "± 26690",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(f64, auto-vectorization)",
+            "value": 258436254,
+            "range": "± 277530",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(simd,f32x8)",
+            "value": 2334737,
+            "range": "± 422",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(uint8, scalar)",
+            "value": 66533692,
+            "range": "± 23596",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "L2(uint8, auto-vectorization)",
+            "value": 73602835,
+            "range": "± 12443",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(half::bfloat::bf16, scalar)",
+            "value": 937938779,
+            "range": "± 553093",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(half::bfloat::bf16, auto-vectorization)",
+            "value": 208127293,
+            "range": "± 27861",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(half::binary16::f16, scalar)",
+            "value": 2901767754,
+            "range": "± 268142",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(half::binary16::f16, auto-vectorization)",
+            "value": 381350783,
+            "range": "± 141429",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(half::binary16::f16, SIMD)",
+            "value": 113953631,
+            "range": "± 19668",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(f32, scalar)",
+            "value": 656060153,
+            "range": "± 33088",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(f32, auto-vectorization)",
+            "value": 128026783,
+            "range": "± 16389",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(f32, SIMD)",
+            "value": 128094146,
+            "range": "± 24192",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(f64, scalar)",
+            "value": 737207679,
+            "range": "± 21243",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "NormL2(f64, auto-vectorization)",
+            "value": 255794024,
+            "range": "± 491799",
             "unit": "ns/iter"
           }
         ]
