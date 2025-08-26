@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756185996891,
+  "lastUpdate": 1756200675312,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -84711,6 +84711,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 300,
             "range": "± 5",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Xuanwo",
+            "username": "Xuanwo",
+            "email": "github@xuanwo.io"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "687cd791d578c6b8ef31a0accd6e275e50f90b66",
+          "message": "feat: add lance file version 2.2 (#4568)\n\nThis PR just added file version 2.2 without any pointer changes (neither\n`stable` nor `next`).\n\n---\n\n**This PR was primarily authored with Claude Code using Opus 4.1 and\nthen hand-reviewed by me. I AM responsible for every change made in this\nPR. I aimed to keep it aligned with our goals, though I may have missed\nminor issues. Please flag anything that feels off, I'll fix it\nquickly.**\n\nSigned-off-by: Xuanwo <github@xuanwo.io>",
+          "timestamp": "2025-08-26T07:10:38Z",
+          "url": "https://github.com/lancedb/lance/commit/687cd791d578c6b8ef31a0accd6e275e50f90b66"
+        },
+        "date": 1756200674464,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 7222003773,
+            "range": "± 46935399",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1279455,
+            "range": "± 193723",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 49230913191,
+            "range": "± 348678932",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 38506,
+            "range": "± 236",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4593314388,
+            "range": "± 4070231",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2235939066,
+            "range": "± 3563061",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 131113,
+            "range": "± 148",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 192578,
+            "range": "± 526",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 838591,
+            "range": "± 2982",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 851399,
+            "range": "± 1074",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 864047,
+            "range": "± 3409",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 309,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 322,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 327,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 335,
+            "range": "± 4",
             "unit": "ns/iter"
           }
         ]
