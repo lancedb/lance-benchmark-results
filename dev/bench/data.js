@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756200675312,
+  "lastUpdate": 1756287003607,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -84823,6 +84823,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 335,
             "range": "± 4",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "BubbleCal",
+            "username": "BubbleCal",
+            "email": "bubble-cal@outlook.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "03dd13bfcc5311720a2a38a202780f4be4373cb8",
+          "message": "perf: improve FTS performance for long query (#4576)\n\nthis improves WAND perf in case of the query consists of many tokens:\n- use bubble sort when the algo only needs to advance single iterator\n- move less posting iterators when evaluate the documents if there are\nmany iterators are at the same doc id\n\n---------\n\nSigned-off-by: BubbleCal <bubble-cal@outlook.com>",
+          "timestamp": "2025-08-27T09:29:32Z",
+          "url": "https://github.com/lancedb/lance/commit/03dd13bfcc5311720a2a38a202780f4be4373cb8"
+        },
+        "date": 1756287002862,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9654760500,
+            "range": "± 51499229",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 829863,
+            "range": "± 22228",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 45386868714,
+            "range": "± 567860545",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 39618,
+            "range": "± 312",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4601376059,
+            "range": "± 500442",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2274744499,
+            "range": "± 1124622",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130461,
+            "range": "± 53",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 187077,
+            "range": "± 512",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 832882,
+            "range": "± 194",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 854305,
+            "range": "± 237",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 862157,
+            "range": "± 908",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 286,
+            "range": "± 9",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 284,
+            "range": "± 19",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 304,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 320,
+            "range": "± 5",
             "unit": "ns/iter"
           }
         ]
