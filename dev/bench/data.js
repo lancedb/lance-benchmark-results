@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756287003607,
+  "lastUpdate": 1756373361253,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -84935,6 +84935,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 320,
             "range": "± 5",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jack Ye",
+            "username": "jackye1995",
+            "email": "yezhaoqin@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "3a0923ce24563fe6af4ca94ff29f0531c0fb320c",
+          "message": "chore: async-std has been discontinued (#4588)\n\n## Summary\nThis PR configures cargo-deny to ignore security advisories for\nunmaintained dependencies that are still needed for optional features.\n\n## Changes\n- Add RUSTSEC-2025-0052 to cargo-deny ignore list (async-std used by\ntfrecord for tensorflow support)\n- Add RUSTSEC-2024-0370 to cargo-deny ignore list (proc-macro-error used\nby jieba-rs via include-flate)\n\n## Context\nThe async-std crate has been discontinued and flagged as a security\nvulnerability. It's used by the tfrecord crate (v0.15.0) which provides\ntensorflow support. Rather than removing tensorflow functionality, we're\nacknowledging the advisory and keeping the feature available.\n\n## Impact\n- Fixes CI failure due to cargo-deny detecting security advisories\n- Maintains tensorflow/tfrecord functionality\n- Explicitly documents known security advisories in deny.toml\n\n## Test plan\n- [x] cargo-deny check advisories passes\n- [x] Build succeeds with tensorflow feature\n- [x] Python extension builds successfully\n\n🤖 Generated with [Claude Code](https://claude.ai/code)",
+          "timestamp": "2025-08-28T07:03:06Z",
+          "url": "https://github.com/lancedb/lance/commit/3a0923ce24563fe6af4ca94ff29f0531c0fb320c"
+        },
+        "date": 1756373360434,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8096901996,
+            "range": "± 68259015",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 836476,
+            "range": "± 7102",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 44916949899,
+            "range": "± 360718874",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 38991,
+            "range": "± 479",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4583871619,
+            "range": "± 5337688",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2236951376,
+            "range": "± 508773",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 129987,
+            "range": "± 30",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 184584,
+            "range": "± 1362",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 829384,
+            "range": "± 663",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 851692,
+            "range": "± 391",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 862874,
+            "range": "± 189",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 276,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 289,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 296,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 309,
+            "range": "± 1",
             "unit": "ns/iter"
           }
         ]
