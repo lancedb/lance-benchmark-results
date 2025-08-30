@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756459754812,
+  "lastUpdate": 1756546112042,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -85159,6 +85159,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 295,
             "range": "± 16",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Xuanwo",
+            "username": "Xuanwo",
+            "email": "github@xuanwo.io"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "31bc1c9b5c27871e8087726bf136696f22243679",
+          "message": "fix: disable default features from jsonb to avoid changing serde-json behavior (#4601)\n\nFix failed tests in https://github.com/lancedb/lancedb/pull/2610\n\n---------\n\nSigned-off-by: Xuanwo <github@xuanwo.io>",
+          "timestamp": "2025-08-29T18:38:07Z",
+          "url": "https://github.com/lancedb/lance/commit/31bc1c9b5c27871e8087726bf136696f22243679"
+        },
+        "date": 1756546111243,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8914531907,
+            "range": "± 67813286",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 842582,
+            "range": "± 10903",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 42202886742,
+            "range": "± 1616151527",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 38055,
+            "range": "± 450",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4581756743,
+            "range": "± 5727942",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2246054741,
+            "range": "± 464208",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 129992,
+            "range": "± 239",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 192972,
+            "range": "± 525",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 832283,
+            "range": "± 434",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 850393,
+            "range": "± 493",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 862256,
+            "range": "± 405",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 255,
+            "range": "± 11",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 266,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 292,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 305,
+            "range": "± 3",
             "unit": "ns/iter"
           }
         ]
