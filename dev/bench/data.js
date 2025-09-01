@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756632504332,
+  "lastUpdate": 1756719055266,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -85383,6 +85383,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 273,
             "range": "± 12",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Xuanwo",
+            "username": "Xuanwo",
+            "email": "github@xuanwo.io"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "998e4fe387893c79bad6d4ba9a1ba3e4bc1e0979",
+          "message": "docs: add docs for JSON and JSON UDFs (#4599)\n\nThis PR adds the docs for JSON support in Lance and JSON's UDFs.\n\n---\n\n**This PR was primarily authored with Claude Code using Opus 4.1 and\nthen hand-reviewed by me. I AM responsible for every change made in this\nPR. I aimed to keep it aligned with our goals, though I may have missed\nminor issues. Please flag anything that feels off, I'll fix it\nquickly.**\n\nSigned-off-by: Xuanwo <github@xuanwo.io>",
+          "timestamp": "2025-09-01T06:31:34Z",
+          "url": "https://github.com/lancedb/lance/commit/998e4fe387893c79bad6d4ba9a1ba3e4bc1e0979"
+        },
+        "date": 1756719054318,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8684887127,
+            "range": "± 59762360",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1212476,
+            "range": "± 130471",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 48544922153,
+            "range": "± 482486348",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 40230,
+            "range": "± 391",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4584310473,
+            "range": "± 10829648",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2266137701,
+            "range": "± 2912735",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130953,
+            "range": "± 53",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 191933,
+            "range": "± 244",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 833760,
+            "range": "± 532",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 857877,
+            "range": "± 1138",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 861959,
+            "range": "± 1401",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 291,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 306,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 319,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 326,
+            "range": "± 6",
             "unit": "ns/iter"
           }
         ]
