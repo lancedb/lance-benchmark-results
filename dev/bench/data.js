@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756719055266,
+  "lastUpdate": 1756805525429,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -85495,6 +85495,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 326,
             "range": "± 6",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jack Ye",
+            "username": "jackye1995",
+            "email": "yezhaoqin@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "1115ecf1bd309caccca7ed5504901ff37953b54c",
+          "message": "feat: allow using opendal to access s3, azblob and gcs (#4597)\n\nUser can set `use_opendal=true` storage option to enable this route. Any\nstorage option will be passed to OpenDAL as is to initialize its\noperator.\n\nRelated to: https://github.com/apache/arrow-rs-object-store/issues/472",
+          "timestamp": "2025-09-02T04:21:49Z",
+          "url": "https://github.com/lancedb/lance/commit/1115ecf1bd309caccca7ed5504901ff37953b54c"
+        },
+        "date": 1756805524591,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9444845338,
+            "range": "± 51638172",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1578208,
+            "range": "± 30415",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 50980031937,
+            "range": "± 307933122",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 40567,
+            "range": "± 404",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4606330162,
+            "range": "± 5100294",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2277471842,
+            "range": "± 1386799",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 129945,
+            "range": "± 188",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 195783,
+            "range": "± 74",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 838654,
+            "range": "± 1721",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 857226,
+            "range": "± 1264",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 869112,
+            "range": "± 824",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 318,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 323,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 333,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 345,
+            "range": "± 1",
             "unit": "ns/iter"
           }
         ]
