@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756978078598,
+  "lastUpdate": 1757064626171,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -85831,6 +85831,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 252,
             "range": "± 12",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jinglun",
+            "username": "wojiaodoubao",
+            "email": "belanhd@outlook.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "551c14610349026dcde9f4a9289cc2edba12e724",
+          "message": "feat: add json parser for FtsQuery (#4605)",
+          "timestamp": "2025-09-05T06:47:16Z",
+          "url": "https://github.com/lancedb/lance/commit/551c14610349026dcde9f4a9289cc2edba12e724"
+        },
+        "date": 1757064625207,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9647757023,
+            "range": "± 100725075",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 879520,
+            "range": "± 2097",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 46569830819,
+            "range": "± 1234341686",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 39454,
+            "range": "± 370",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4584065502,
+            "range": "± 539562",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2234232262,
+            "range": "± 334134",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130712,
+            "range": "± 47",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 189105,
+            "range": "± 108",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 832602,
+            "range": "± 264",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 851344,
+            "range": "± 522",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 864608,
+            "range": "± 489",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 283,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 299,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 306,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 319,
+            "range": "± 1",
             "unit": "ns/iter"
           }
         ]
