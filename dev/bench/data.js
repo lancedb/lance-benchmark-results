@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757064626171,
+  "lastUpdate": 1757150906080,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -85943,6 +85943,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 319,
             "range": "± 1",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Wyatt Alt",
+            "username": "wkalt",
+            "email": "wyatt.alt@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "9e01186d7437fc1fd18e8ca96ce2f229691cd40b",
+          "message": "chore: update object_store (#4654)\n\nUpdates object_store to 0.12.3. This fixes a deprecation warning that is\nproduced when Lance is built with 0.12.3.",
+          "timestamp": "2025-09-05T21:24:22Z",
+          "url": "https://github.com/lancedb/lance/commit/9e01186d7437fc1fd18e8ca96ce2f229691cd40b"
+        },
+        "date": 1757150905123,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 7713352633,
+            "range": "± 74898939",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 826030,
+            "range": "± 2292",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 40635891228,
+            "range": "± 282103703",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 41868,
+            "range": "± 570",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4579103551,
+            "range": "± 1745248",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2228081469,
+            "range": "± 545952",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130525,
+            "range": "± 55",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 191820,
+            "range": "± 1056",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 832744,
+            "range": "± 659",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 855750,
+            "range": "± 336",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 863974,
+            "range": "± 114",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 248,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 270,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 274,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 285,
+            "range": "± 4",
             "unit": "ns/iter"
           }
         ]
