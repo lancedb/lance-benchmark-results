@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757150906080,
+  "lastUpdate": 1757237335048,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -86055,6 +86055,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 285,
             "range": "± 4",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Faiz",
+            "username": "steFaiz",
+            "email": "34311299+steFaiz@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "818d312d55720bc529d366968f4f6c6a5fac0a0e",
+          "message": "feat(java): supports fragment-level mergeColumn interface (#4649)\n\nSupport fragment level merge column api. See issue: \n[4650](https://github.com/lancedb/lance/issues/4650)\n\n---------\n\nCo-authored-by: 喆宇 <wxy407679@antgroup.com>",
+          "timestamp": "2025-09-06T16:48:25Z",
+          "url": "https://github.com/lancedb/lance/commit/818d312d55720bc529d366968f4f6c6a5fac0a0e"
+        },
+        "date": 1757237334081,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 6695148380,
+            "range": "± 79283031",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 846313,
+            "range": "± 12188",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 46135809768,
+            "range": "± 609201589",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 39483,
+            "range": "± 138",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4573198419,
+            "range": "± 1677077",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2226286100,
+            "range": "± 349014",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130581,
+            "range": "± 398",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 191479,
+            "range": "± 397",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 829799,
+            "range": "± 308",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 850817,
+            "range": "± 409",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 859534,
+            "range": "± 204",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 287,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 295,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 307,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 318,
+            "range": "± 2",
             "unit": "ns/iter"
           }
         ]
