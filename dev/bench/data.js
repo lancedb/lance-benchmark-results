@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757237335048,
+  "lastUpdate": 1757323822579,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -86167,6 +86167,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 318,
             "range": "± 2",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Chenghao Guo",
+            "username": "chenghao-guo",
+            "email": "landonguo@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "16bfffcde1d6a78af63d8e86b272423769cbf7c3",
+          "message": "feat: support build FTS index distributedly (#4578)\n\nClose #4514\nRelated with https://github.com/lancedb/lance-ray/issues/12\n\nThis PR introduces distributed fts index capabilities enabling parallel\nindex creation across multiple fragments.\n\n### New added methods\n- `execute_uncommitted()`: Creates index metadata without dataset\ncommitment, returning `IndexMetadata` for distributed coordination.\nChainable method specifying target fragment IDs for selective indexing\nas suggested by Will Jones in discussion\nhttps://github.com/lancedb/lance/issues/4514#issuecomment-3207183353\n```\n              let partial_index=CreateIndexBuilder::new(&mut dataset, &[\"text\"], IndexType::Inverted, &params)\n                    .name(\"distributed_index\".to_string())\n                    .fragments(vec![fragment_id])\n                    .fragment_uuid(shared_uuid.clone())\n                    .execute_uncommitted()\n                    .await?;\n```\n\n- `merge_index_metadata()`: Merges distributed index metadata from\nmultiple workers into consolidated final metadata\n\n### Distributed Workflow\n1. **Split and Parallel Phase**: Ray header distributes the fragments to\ndifferent workers. (We may distribute the fragments evenly to different\nworkers by fragment statistics, which will be implemented in lance-ray\nconnector)\nRay Workers call `execute_uncommitted()` on specific fragments using\n`fragments()` method. Shared UUID via `fragment_uuid()` ensures\nconsistent index identity.\n2. **Merge Phase**: `merge_index_metadata()` consolidates partition\nmetadata files (`part_*_metadata.lance`)\n3. **Commit Phase**: Final index commitment with unified metadata\n\n**Example**\nThe workflow example can be found in `test_distribute_fts_index_build`\nin\n[test_scalar_index.py](https://github.com/lancedb/lance/pull/4578/files#diff-a95edaddaa3a260e498c04e10f073261bdc529cd4f47b928ad80274754af0548R1964-R2021).\n\n**Following work after this PR:**\nThe distributed index building workflow PR will be proposed to lance-ray\nconnector.\nlance-ray draft PR https://github.com/lancedb/lance-ray/pull/45\n\n**Other implementation details on fragment_mask**\n Optional mask with fragment_id in high 32 bits. When provided,\nonly partitions whose partition id matches this fragment will be\nincluded.\nThe fragment mask is constructed as `(fragment_id as u64) << 32`.",
+          "timestamp": "2025-09-08T08:56:39Z",
+          "url": "https://github.com/lancedb/lance/commit/16bfffcde1d6a78af63d8e86b272423769cbf7c3"
+        },
+        "date": 1757323821810,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8495971099,
+            "range": "± 56999954",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 826903,
+            "range": "± 43441",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 45478936947,
+            "range": "± 807837763",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 41756,
+            "range": "± 295",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4576761477,
+            "range": "± 7561077",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2230617794,
+            "range": "± 621403",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130607,
+            "range": "± 145",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 193149,
+            "range": "± 35",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 835069,
+            "range": "± 439",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 853914,
+            "range": "± 457",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 864306,
+            "range": "± 250",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 280,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 291,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 302,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 315,
+            "range": "± 3",
             "unit": "ns/iter"
           }
         ]
