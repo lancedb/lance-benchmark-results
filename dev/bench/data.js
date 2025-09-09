@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757323822579,
+  "lastUpdate": 1757410288577,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -86278,6 +86278,118 @@ window.BENCHMARK_DATA = {
           {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 315,
+            "range": "± 3",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Faiz",
+            "username": "steFaiz",
+            "email": "34311299+steFaiz@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "da9922802a33e9c8144dc6b1da6c9b13c95c6ee7",
+          "message": "feat(java): extends WriteParams in java with `enable_stable_row_ids` option (#4674)\n\nThis PR is about to add `enable_stable_row_ids` option to Java API.\n\nI notice that `stable_row_ids` is an important feature that has been\nintroduced to Rust module. I believe that the java ecosystem also need\nthis feature.\n\n---------\n\nCo-authored-by: 喆宇 <wxy407679@antgroup.com>",
+          "timestamp": "2025-09-09T06:01:23Z",
+          "url": "https://github.com/lancedb/lance/commit/da9922802a33e9c8144dc6b1da6c9b13c95c6ee7"
+        },
+        "date": 1757410287762,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8135828005,
+            "range": "± 61965490",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1507650,
+            "range": "± 99809",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 50044471089,
+            "range": "± 454124422",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 39603,
+            "range": "± 516",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4575519928,
+            "range": "± 2947651",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2221267010,
+            "range": "± 565927",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130387,
+            "range": "± 73",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 192055,
+            "range": "± 241",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 840128,
+            "range": "± 4161",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 855284,
+            "range": "± 1249",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 874602,
+            "range": "± 1275",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 315,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 323,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 333,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 338,
             "range": "± 3",
             "unit": "ns/iter"
           }
