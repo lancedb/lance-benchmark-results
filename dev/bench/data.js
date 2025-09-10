@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757410288577,
+  "lastUpdate": 1757496642154,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -86390,6 +86390,118 @@ window.BENCHMARK_DATA = {
           {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 338,
+            "range": "± 3",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "nathan.ma",
+            "username": "majin1102",
+            "email": "majin1102@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "a1b0438f9b45437720bc4629abc63d70bd847076",
+          "message": "chore(java): refactor transaction jni code for better readability (#4662)\n\n1. refactor transaction.rs of JNI code for better readability. This was\nmainly paying off debts from earlier development and reduced 15-20% code\nin transaction.rs of JNI\n2. Based on\nhttps://github.com/lancedb/lance/pull/4609#discussion_r2324041401,\nrefactor some optional fields in Operations\n3. Delete some blank lines for a uniform look\n4. Add final to some fields to eliminate warnings",
+          "timestamp": "2025-09-10T06:15:18Z",
+          "url": "https://github.com/lancedb/lance/commit/a1b0438f9b45437720bc4629abc63d70bd847076"
+        },
+        "date": 1757496641434,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8682638519,
+            "range": "± 93686607",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 977798,
+            "range": "± 100294",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 47543644159,
+            "range": "± 504674245",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 37992,
+            "range": "± 433",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4607890092,
+            "range": "± 5372552",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2263227894,
+            "range": "± 649879",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130498,
+            "range": "± 41",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 188446,
+            "range": "± 666",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 833051,
+            "range": "± 796",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 854834,
+            "range": "± 409",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 863465,
+            "range": "± 475",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 285,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 307,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 318,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 323,
             "range": "± 3",
             "unit": "ns/iter"
           }
