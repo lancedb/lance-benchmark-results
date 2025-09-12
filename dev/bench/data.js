@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757583232093,
+  "lastUpdate": 1757669501089,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -86615,6 +86615,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 334,
             "range": "± 0",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Beinan",
+            "username": "beinan",
+            "email": "beinan@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "25be97b7e25f050b604b24738beb24d8db6951b9",
+          "message": "feat: add compact functionality to Java/JNI interface (#4703)\n\nThis PR implements the compact feature for Java users, exposing the\nexisting Rust `compact_files` functionality through JNI bindings.\n\n---------\n\nCo-authored-by: Claude <noreply@anthropic.com>",
+          "timestamp": "2025-09-12T05:08:29Z",
+          "url": "https://github.com/lancedb/lance/commit/25be97b7e25f050b604b24738beb24d8db6951b9"
+        },
+        "date": 1757669500282,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9319320770,
+            "range": "± 60936269",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1431338,
+            "range": "± 152415",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 50561342280,
+            "range": "± 499157341",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 39574,
+            "range": "± 579",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4582442366,
+            "range": "± 3802061",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2225335484,
+            "range": "± 2842844",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 129779,
+            "range": "± 208",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 191044,
+            "range": "± 184",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 840025,
+            "range": "± 1026",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 860786,
+            "range": "± 2081",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 864150,
+            "range": "± 802",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 315,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 325,
+            "range": "± 8",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 350,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 351,
+            "range": "± 4",
             "unit": "ns/iter"
           }
         ]
