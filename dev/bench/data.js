@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757669501089,
+  "lastUpdate": 1757755929811,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -86727,6 +86727,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 351,
             "range": "± 4",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "LuQQiu",
+            "username": "LuQQiu",
+            "email": "luqiujob@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "419ac973396cdf09686c81532385e679b15b7e08",
+          "message": "feat: optimize bitmap index with lazy loading and column projection (#4699)\n\nFixes the problem of loading bitmap index when creating it. The whole\nbitmap index was loaded during first search or first get index\nstatistics. Get index statistics should not load and cache the bitmaps.\n\nThis PR converts the bitmap index from eager loading (all bitmaps loaded\ninto memory during index load) to lazy loading (bitmaps loaded on-demand\nand cached). This significantly reduces memory usage for large bitmap\nindices while maintaining performance through caching.\n\nThe implementation adds lazy loading support where bitmaps are loaded\non-demand via load_bitmap(), integrates with Lance's consolidated\nLanceCache system, and implements a prewarm() method that reads the\nindex file in chunks to preload all bitmaps when predictable performance\nis needed. The null bitmap is kept in memory as it's frequently\naccessed, and FragReuseIndex remapping is properly applied during both\ninitial load and lazy load operations.\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\n---------\n\nCo-authored-by: Claude <noreply@anthropic.com>",
+          "timestamp": "2025-09-13T00:36:56Z",
+          "url": "https://github.com/lancedb/lance/commit/419ac973396cdf09686c81532385e679b15b7e08"
+        },
+        "date": 1757755929057,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9537205201,
+            "range": "± 70583427",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1617978,
+            "range": "± 19209",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 50581289149,
+            "range": "± 603685834",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 39465,
+            "range": "± 499",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4596589833,
+            "range": "± 5322387",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2260651442,
+            "range": "± 1045493",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130386,
+            "range": "± 67",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 192032,
+            "range": "± 94",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 840744,
+            "range": "± 846",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 863068,
+            "range": "± 2481",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 866372,
+            "range": "± 714",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 322,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 333,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 337,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 347,
+            "range": "± 6",
             "unit": "ns/iter"
           }
         ]
