@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757842276513,
+  "lastUpdate": 1757928769984,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -86951,6 +86951,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 321,
             "range": "± 2",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Felix Schultz",
+            "username": "felix-schultz",
+            "email": "25091110+felix-schultz@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "1fa18f0a52d114d5a5c0f88c5b256222ea16c4ae",
+          "message": "fix: refine SIMD support detection for AArch64 on iOS/tvOS (#4725)\n\nThis pull request updates the detection logic for FP16 SIMD support on\nAArch64 platforms in the `lance-core` crate. The main change is to\nensure that on iOS and tvOS, NEON SIMD support is assumed for FP16\noperations, while on other AArch64 platforms, runtime detection is still\nused.\n\nPlatform-specific SIMD detection:\n\n* In `rust/lance-core/src/utils/cpu.rs`, the initialization of\n`FP16_SIMD_SUPPORT` now always assumes NEON support for FP16 on AArch64\niOS and tvOS platforms, while retaining runtime detection for other\nAArch64 targets.",
+          "timestamp": "2025-09-15T06:57:11Z",
+          "url": "https://github.com/lancedb/lance/commit/1fa18f0a52d114d5a5c0f88c5b256222ea16c4ae"
+        },
+        "date": 1757928769255,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8168891824,
+            "range": "± 71110224",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1598064,
+            "range": "± 49575",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 50748139852,
+            "range": "± 451859434",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 37357,
+            "range": "± 337",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4595206359,
+            "range": "± 7257492",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2253178891,
+            "range": "± 1758777",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130487,
+            "range": "± 40",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 201718,
+            "range": "± 272",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 837903,
+            "range": "± 726",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 857738,
+            "range": "± 693",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 866804,
+            "range": "± 330",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 316,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 330,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 337,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 347,
+            "range": "± 3",
             "unit": "ns/iter"
           }
         ]
