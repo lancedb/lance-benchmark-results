@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757928769984,
+  "lastUpdate": 1758014893309,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -87063,6 +87063,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 347,
             "range": "± 3",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jim Apple",
+            "username": "jbapple",
+            "email": "jim@lancedb.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "8b9ad8c144e0ead312967314e47f96c5d250cc2e",
+          "message": "fix: correct underestimate of Bloom filter epsilon (#4734)\n\nAfter split block bloom filters were added to Parquet from Impala, a bug\nwas found and fixed regarding an underestimate of the false positive\nprobability. Because the number of keys in each block is not identical,\nsome blocks have higher false positive probabilities and some lower.\nThere is no closed-form formula for this, but there is an iterative way\nto calculate it. This patch adds that.\n\nFixes #4730.",
+          "timestamp": "2025-09-16T07:33:11Z",
+          "url": "https://github.com/lancedb/lance/commit/8b9ad8c144e0ead312967314e47f96c5d250cc2e"
+        },
+        "date": 1758014892579,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 7069508909,
+            "range": "± 56020040",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 825918,
+            "range": "± 1203",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 39860460706,
+            "range": "± 343120175",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 37798,
+            "range": "± 470",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4586871211,
+            "range": "± 3589782",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2256039111,
+            "range": "± 366643",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130319,
+            "range": "± 45",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 192438,
+            "range": "± 216",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 831742,
+            "range": "± 455",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 849884,
+            "range": "± 626",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 865922,
+            "range": "± 209",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 242,
+            "range": "± 9",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 260,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 262,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 285,
+            "range": "± 8",
             "unit": "ns/iter"
           }
         ]
