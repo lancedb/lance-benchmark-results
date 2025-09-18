@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758101365946,
+  "lastUpdate": 1758187825871,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -87287,6 +87287,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 264,
             "range": "± 19",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "vinoyang",
+            "username": "yanghua",
+            "email": "yanghua1127@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "a05d78df1e77f8e114b931629efc6347dfc2f7bd",
+          "message": "feat(rust): support refresh frag bitmap for index after updating when enable stable rowid (#4589)\n\n… enable stable rowid",
+          "timestamp": "2025-09-18T06:02:04Z",
+          "url": "https://github.com/lancedb/lance/commit/a05d78df1e77f8e114b931629efc6347dfc2f7bd"
+        },
+        "date": 1758187825142,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9259369980,
+            "range": "± 83795537",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 843027,
+            "range": "± 8372",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 45233331175,
+            "range": "± 962859982",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 37229,
+            "range": "± 396",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4577829120,
+            "range": "± 3190886",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2230712452,
+            "range": "± 725855",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130271,
+            "range": "± 199",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 196206,
+            "range": "± 47",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 831003,
+            "range": "± 637",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 852291,
+            "range": "± 277",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 861976,
+            "range": "± 389",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 280,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 280,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 296,
+            "range": "± 19",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 317,
+            "range": "± 5",
             "unit": "ns/iter"
           }
         ]
