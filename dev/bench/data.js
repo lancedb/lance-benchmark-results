@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758187825871,
+  "lastUpdate": 1758274121965,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -87399,6 +87399,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 317,
             "range": "± 5",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jinglun",
+            "username": "wojiaodoubao",
+            "email": "belanhd@outlook.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "7ac07cd51b90e56a3c70f0c288e79dea13cdd949",
+          "message": "fix: fts boolean query and boost query do not support phrase (#4766)\n\nCo-authored-by: lijinglun <lijinglun@bytedance.com>",
+          "timestamp": "2025-09-19T01:22:32Z",
+          "url": "https://github.com/lancedb/lance/commit/7ac07cd51b90e56a3c70f0c288e79dea13cdd949"
+        },
+        "date": 1758274121239,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 7941129175,
+            "range": "± 74519766",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 813229,
+            "range": "± 2275",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 40868339496,
+            "range": "± 483322176",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 37328,
+            "range": "± 448",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4589740675,
+            "range": "± 683686",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2230590933,
+            "range": "± 138207",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130176,
+            "range": "± 15",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 190571,
+            "range": "± 501",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 832873,
+            "range": "± 701",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 852122,
+            "range": "± 413",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 860695,
+            "range": "± 143",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 244,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 268,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 272,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 279,
+            "range": "± 6",
             "unit": "ns/iter"
           }
         ]
