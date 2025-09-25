@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758706205776,
+  "lastUpdate": 1758792751686,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -88071,6 +88071,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 264,
             "range": "± 12",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "wayneli-vt",
+            "username": "wayneli-vt",
+            "email": "l8261793@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "39daa4cf7cabb90356e2677c8ed060417368ebad",
+          "message": "feat(java): expose additional Operation::Update fields to bindings (#4788)\n\nThis PR enhances the Java bindings for Operation::Update as a follow-up\nto #4589.\n\nWhile #4589 introduced new fields to the Rust Operation::Update struct,\nthe Java bindings were still missing support not only for those new\nfields but also for the existing `fields_modified field`, which is\ncrucial for handling column modifications.\n\nSpecifically, it adds support for the following fields:\n\n```rust\n  Update {\n      // ...\n      /// The fields that have been modified\n      fields_modified: Vec<u32>,\n      // 👇 New fields from #4589\n      /// The fields that used to judge whether to preserve the new frag's id into\n      /// the frag bitmap of the specified indices.\n      fields_for_preserving_frag_bitmap: Vec<u32>,\n      /// The mode of update\n      update_mode: Option<UpdateMode>,\n  }\n```\n\n---------\n\nCo-authored-by: Weiren <litaiwei.lwt@antgroup.com>",
+          "timestamp": "2025-09-25T06:29:51Z",
+          "url": "https://github.com/lancedb/lance/commit/39daa4cf7cabb90356e2677c8ed060417368ebad"
+        },
+        "date": 1758792750830,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 7154972887,
+            "range": "± 47760365",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1747291,
+            "range": "± 20038",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 52819455371,
+            "range": "± 262434001",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 38052,
+            "range": "± 230",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4620975670,
+            "range": "± 6037840",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2272392086,
+            "range": "± 1400034",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=96,DIM=1536",
+            "value": 130854,
+            "range": "± 70",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=96,DIM=1536",
+            "value": 196810,
+            "range": "± 112",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=96,DIM=1536",
+            "value": 843681,
+            "range": "± 3017",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=96,DIM=1536",
+            "value": 865096,
+            "range": "± 2717",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=96,DIM=1536",
+            "value": 871401,
+            "range": "± 1312",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 334,
+            "range": "± 9",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 359,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 365,
+            "range": "± 8",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 374,
+            "range": "± 5",
             "unit": "ns/iter"
           }
         ]
