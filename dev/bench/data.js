@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758792751686,
+  "lastUpdate": 1758879055628,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -88183,6 +88183,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 374,
             "range": "± 5",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jack Ye",
+            "username": "jackye1995",
+            "email": "yezhaoqin@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "43e0e7e86ec39029fee6a5fff2cfb7e0dd5b7fa4",
+          "message": "chore: fix various typos in the index spec and add sbbf details (#4817)\n\n- Make sure we are clear that the sub-sections under \"Arrow schema\nmetadata\" in vector index refers to metadata keys\n- Use \"indices\" consistently across the docs\n- Fix broken links\n- Fix notes indentation\n- Fix typos in various sentences and add more information if necessary\n- Add bffs information in bloom filter\n- Ran grammar fix through claude code",
+          "timestamp": "2025-09-26T05:32:39Z",
+          "url": "https://github.com/lancedb/lance/commit/43e0e7e86ec39029fee6a5fff2cfb7e0dd5b7fa4"
+        },
+        "date": 1758879054894,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 7761709389,
+            "range": "± 27020494",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1060333,
+            "range": "± 123623",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 46999726255,
+            "range": "± 270281473",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 36732,
+            "range": "± 408",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4599992253,
+            "range": "± 730415",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2234885910,
+            "range": "± 635690",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17635,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 30307,
+            "range": "± 13",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130044,
+            "range": "± 20",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 148759,
+            "range": "± 22",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139477,
+            "range": "± 16",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 285,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 295,
+            "range": "± 9",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 307,
+            "range": "± 10",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 317,
+            "range": "± 11",
             "unit": "ns/iter"
           }
         ]
