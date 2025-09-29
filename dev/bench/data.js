@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759051701824,
+  "lastUpdate": 1759138265837,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -88519,6 +88519,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 254,
             "range": "± 7",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Xuanwo",
+            "username": "Xuanwo",
+            "email": "github@xuanwo.io"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "e2a75b6c2d6147cf5afbbd2c45e7118dcb08904c",
+          "message": "perf: optmize doc set loading (#4821)\n\nThis PR is another effort to optimize cold-start FTS queries. In this\nPR, I made the following changes:\n\n- Remove unnecessary `fragment_ids` calculation. This implementation is\nnot optimal (high hash conflicts) and there is no place that uses this\nset. It’s dead code.\n- Refactor `DocSet::load` to avoid sorting row_ids when it is not\nneeded.\n\nBased on my test over a 40M Wikipedia dataset, this PR reduces the cold\nlatency P95 by **18.7%**, from `3721.32 ms` to `2939.80 ms`.\n\nBefore:\n\n```shell\n- open(ms): mean=89.42, p95=111.35, p99=113.00, min=59.60, max=113.41\n- search(ms): mean=3509.95, p95=3721.32, p99=3736.24, min=3213.37, max=3739.97\n- total(ms): mean=3599.37, p95=3818.00, p99=3831.64, min=3272.97, max=3835.05\n- wall-clock(s): 18.72\n```\n\n<img width=\"2289\" height=\"782\" alt=\"image\"\nsrc=\"https://github.com/user-attachments/assets/11ddb99b-5759-4387-9aa1-69d42c5a91ee\"\n/>\n\n \n\nAfter:\n\n```shell\n- open(ms): mean=82.63, p95=101.40, p99=104.23, min=69.31, max=104.94\n- search(ms): mean=2822.02, p95=2939.80, p99=2954.77, min=2713.83, max=2958.51\n- total(ms): mean=2904.65, p95=3024.94, p99=3041.57, min=2788.65, max=3045.73\n- wall-clock(s): 15.22\n```\n\n<img width=\"2297\" height=\"695\" alt=\"image\"\nsrc=\"https://github.com/user-attachments/assets/924efc75-3b13-4199-925c-3ddb453ac9f0\"\n/>\n\n\n---\n\n**This PR was primarily authored with Codex using GPT-5-Codex and then\nhand-reviewed by me. I AM responsible for every change made in this PR.\nI aimed to keep it aligned with our goals, though I may have missed\nminor issues. Please flag anything that feels off, I'll fix it\nquickly.**\n\n---------\n\nSigned-off-by: Xuanwo <github@xuanwo.io>",
+          "timestamp": "2025-09-29T08:01:45Z",
+          "url": "https://github.com/lancedb/lance/commit/e2a75b6c2d6147cf5afbbd2c45e7118dcb08904c"
+        },
+        "date": 1759138265046,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9388312463,
+            "range": "± 77512250",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 897791,
+            "range": "± 9763",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 47819652175,
+            "range": "± 383048605",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 39730,
+            "range": "± 290",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4573094237,
+            "range": "± 2352929",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2237365602,
+            "range": "± 1696545",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17638,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28823,
+            "range": "± 17",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130360,
+            "range": "± 20",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 150022,
+            "range": "± 22",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139420,
+            "range": "± 8",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 289,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 308,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 312,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 324,
+            "range": "± 1",
             "unit": "ns/iter"
           }
         ]
