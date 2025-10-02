@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759311031138,
+  "lastUpdate": 1759397376104,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -88854,6 +88854,118 @@ window.BENCHMARK_DATA = {
           {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 297,
+            "range": "± 2",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "wayneli-vt",
+            "username": "wayneli-vt",
+            "email": "l8261793@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "e55f2663655a66cac6189294acf7899a9d4c1ddb",
+          "message": "feat: support fragment-level update columns (#4715)\n\nAs described in https://github.com/lancedb/lance/issues/4650, this PR\nimplements a fragment-level column update operation in Rust and exposes\nit through the Java API. This allows for efficient, partial updates of a\ndataset without copying irrelevant fields.\n\nThe update mechanism follows these rules:\n* **Update existing rows**: For any row identified by a given key in the\ntarget table, if a corresponding update value is present in the source\ndata, the target row's value is replaced. This applies even if the new\nvalue is null.\n* **Preserve untouched rows**: If a row in the target table has no\ncorresponding update in the source data, it remains unchanged.\n\nThe image below illustrates this process:\n<img width=\"536\" height=\"289\" alt=\"image\"\nsrc=\"https://github.com/user-attachments/assets/d3629f88-e3f2-4f9d-b0e9-379d3dd482d1\"\n/>\n\n\n**Important:** It is the responsibility of the calling engine (e.g.,\nSpark, Flink) to ensure that the update data (the source) is correctly\npartitioned and routed to the corresponding fragments of the target\ntable. The core operation assumes it receives the correct data for the\nfragment it is operating on.\n\n---------\n\nCo-authored-by: Weiren <litaiwei.lwt@antgroup.com>",
+          "timestamp": "2025-10-02T06:49:21Z",
+          "url": "https://github.com/lancedb/lance/commit/e55f2663655a66cac6189294acf7899a9d4c1ddb"
+        },
+        "date": 1759397375282,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8371250590,
+            "range": "± 46407472",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 844251,
+            "range": "± 5352",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 45413391901,
+            "range": "± 326625830",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 38706,
+            "range": "± 603",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4602894422,
+            "range": "± 2062359",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2242261331,
+            "range": "± 537786",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17634,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 30394,
+            "range": "± 50",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130046,
+            "range": "± 54",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 148668,
+            "range": "± 14",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139376,
+            "range": "± 15",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 277,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 292,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 302,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 313,
             "range": "± 2",
             "unit": "ns/iter"
           }
