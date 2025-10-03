@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759397376104,
+  "lastUpdate": 1759483880424,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -88967,6 +88967,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 313,
             "range": "± 2",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Lei Xu",
+            "username": "eddyxu",
+            "email": "lei@lancedb.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "e464c0a975208de434b5af56db046d2673f76562",
+          "message": "feat: change one-pass GPU ivf-pq indexing as default (#4879)",
+          "timestamp": "2025-10-02T17:12:49Z",
+          "url": "https://github.com/lancedb/lance/commit/e464c0a975208de434b5af56db046d2673f76562"
+        },
+        "date": 1759483879635,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 10015279008,
+            "range": "± 88897614",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 884199,
+            "range": "± 91633",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 47499105285,
+            "range": "± 1380040479",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 40639,
+            "range": "± 389",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4608540916,
+            "range": "± 10453238",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2263379429,
+            "range": "± 881375",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17638,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 29649,
+            "range": "± 21",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 129940,
+            "range": "± 65",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 148706,
+            "range": "± 11",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139761,
+            "range": "± 107",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 296,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 303,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 309,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 331,
+            "range": "± 0",
             "unit": "ns/iter"
           }
         ]
