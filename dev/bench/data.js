@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759656680867,
+  "lastUpdate": 1759743068594,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -89303,6 +89303,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 327,
             "range": "± 1",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "LuQQiu",
+            "username": "LuQQiu",
+            "email": "luqiujob@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "17e4c921924e18b8eca0c8799afb2f92628bdf01",
+          "message": "feat: add scan_range_after_filter pushdown optimization for filtered reads (#4795)\n\nImplements pushdown optimization for `scan_range_after_filter`\n(LIMIT/OFFSET after filtering) to reduce unnecessary I/O when reading\nfiltered data with limits.\n- Push limits down to fragment level during planning when we have exact\nindex\n  results or sufficient AtLeast guarantees\n- Apply runtime soft limits per fragment and hard range enforcement\nglobally\n  - Multi-partition support not yet implemented\n\n---------\n\nCo-authored-by: Claude <noreply@anthropic.com>",
+          "timestamp": "2025-10-05T17:47:23Z",
+          "url": "https://github.com/lancedb/lance/commit/17e4c921924e18b8eca0c8799afb2f92628bdf01"
+        },
+        "date": 1759743067778,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9375508601,
+            "range": "± 139776835",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 857467,
+            "range": "± 30021",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 46775444656,
+            "range": "± 701479529",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 39538,
+            "range": "± 512",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4610364634,
+            "range": "± 11390862",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2254845546,
+            "range": "± 427259",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17638,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 29767,
+            "range": "± 13",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130181,
+            "range": "± 17",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149747,
+            "range": "± 21",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 140050,
+            "range": "± 15",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 278,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 294,
+            "range": "± 8",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 295,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 318,
+            "range": "± 6",
             "unit": "ns/iter"
           }
         ]
