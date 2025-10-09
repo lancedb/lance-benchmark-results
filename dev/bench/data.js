@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759915937401,
+  "lastUpdate": 1760002264649,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -89635,6 +89635,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 322,
             "range": "± 3",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "ColdL",
+            "username": "ColdL",
+            "email": "newhand.lh@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "82fa6380743bcbe240578b746522bbab7c56a5ec",
+          "message": "fix: let Java module use LanceFileVersion::Stable (#4558) (#4559)\n\nIt seems that the Java part is using different `LanceFileVersion`\nvalues.\n\nIn `java/core/lance-jni/src/utils.rs`, it uses\n`LanceFileVersion::Stable`.\n\nIn `java/core/lance-jni/src/file_writer.rs`, it uses\n`LanceFileVersion::V2_1`.\n\nThis change aims to unify the `LanceFileVersion` in the Java module to\n`Stable`.",
+          "timestamp": "2025-10-09T04:06:19Z",
+          "url": "https://github.com/lancedb/lance/commit/82fa6380743bcbe240578b746522bbab7c56a5ec"
+        },
+        "date": 1760002263871,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 7268970565,
+            "range": "± 39993380",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 908387,
+            "range": "± 49060",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 46146332452,
+            "range": "± 1209699196",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 38612,
+            "range": "± 650",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4605826139,
+            "range": "± 12824262",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2249628003,
+            "range": "± 581735",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17636,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28420,
+            "range": "± 81",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 129875,
+            "range": "± 19",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149365,
+            "range": "± 35",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 140179,
+            "range": "± 38",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 294,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 305,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 287,
+            "range": "± 11",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 316,
+            "range": "± 4",
             "unit": "ns/iter"
           }
         ]
