@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760002264649,
+  "lastUpdate": 1760088622816,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -89747,6 +89747,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 316,
             "range": "± 4",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Wyatt Alt",
+            "username": "wkalt",
+            "email": "wyatt.alt@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "a3ed68d5b6e0458852e0966a19fb9e7e40595d47",
+          "message": "fix: rewrap LanceFilterExec with_new_children (#4920)\n\nPrior to this commit, calling with_new_children on a LanceFilterExec\nwould produce a FilterExec physical plan node, from which the filter\ncould not be recovered in optimizer rules.\n\nThis caused an issue in our optimizer rules after a recent DF update -\npresumably this is now getting called somewhere where it previously was\nnot.\n\nThis commit wraps the output in a new LanceFilterExec so that the filter\nis still available to optimizer rules.",
+          "timestamp": "2025-10-09T22:40:26Z",
+          "url": "https://github.com/lancedb/lance/commit/a3ed68d5b6e0458852e0966a19fb9e7e40595d47"
+        },
+        "date": 1760088621971,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9149352370,
+            "range": "± 71395872",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 849552,
+            "range": "± 18961",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 44352478706,
+            "range": "± 815320017",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 39973,
+            "range": "± 419",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4608258948,
+            "range": "± 10198243",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2275849454,
+            "range": "± 438983",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17634,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 27373,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130150,
+            "range": "± 17",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149197,
+            "range": "± 14",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139802,
+            "range": "± 24",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 275,
+            "range": "± 9",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 298,
+            "range": "± 10",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 310,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 317,
+            "range": "± 7",
             "unit": "ns/iter"
           }
         ]
