@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760175008720,
+  "lastUpdate": 1760261560719,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -89971,6 +89971,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 330,
             "range": "± 13",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Will Jones",
+            "username": "wjones127",
+            "email": "willjones127@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "7e65e8b07097dff5d93af41c2c0adbda46f5b0fb",
+          "message": "test: standardize IO tests and improve assertions (#4923)\n\n* `IOTracker` is now public in `lance-io`, so it can be re-used\nthroughout the codebase.\n* Added new assertions `assert_io_eq!()`, `assert_io_lt!()` and\n`assert_io_gt!()` which will print out the list of requests in case of\nfailure:\n\n```rust\nthread 'dataset::tests::test_load_manifest_iops' panicked at rust/lance/src/dataset.rs:2882:9:\nassertion failed: `(left == right)`: Expected read_iops to be 3, got 2. Requests: [\n    IORequest(method=list, path=\"test/_versions\"),\n    IORequest(method=get_opts, path=\"test/_versions/1.manifest\"),\n]\n\nDiff < left / right > :\n<2\n>3\n```",
+          "timestamp": "2025-10-10T21:51:51Z",
+          "url": "https://github.com/lancedb/lance/commit/7e65e8b07097dff5d93af41c2c0adbda46f5b0fb"
+        },
+        "date": 1760261559916,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8889684512,
+            "range": "± 79468301",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1633674,
+            "range": "± 11906",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 50731540929,
+            "range": "± 824573347",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 38491,
+            "range": "± 330",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4615769155,
+            "range": "± 1197760",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2261322751,
+            "range": "± 745216",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17635,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 27670,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130099,
+            "range": "± 76",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 148894,
+            "range": "± 61",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 140153,
+            "range": "± 32",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 307,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 324,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 334,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 333,
+            "range": "± 2",
             "unit": "ns/iter"
           }
         ]
