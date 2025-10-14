@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760347904447,
+  "lastUpdate": 1760434305851,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -90195,6 +90195,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 328,
             "range": "± 2",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "BubbleCal",
+            "username": "BubbleCal",
+            "email": "bubble-cal@outlook.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "28445c075a879508c169cb7d3cb6a24b386361e5",
+          "message": "fix: rebuild HNSW graph while remapping it (#4941)\n\nHNSW can't be simply remapped because the graph structure also needs to\nbe rebuilt after the vectors changed,\nwe didn't allow to remap HNSW before this, this PR allows remapping HNSW\nby rebuilding the graph.\n\nBefore this, compaction on a table with HNSW index would raise error\n\"remap HNSW is not supported yet\". Users would be able to do remap\n(triggered by compaction) after this.\n\n---------\n\nSigned-off-by: BubbleCal <bubble-cal@outlook.com>",
+          "timestamp": "2025-10-13T11:51:17Z",
+          "url": "https://github.com/lancedb/lance/commit/28445c075a879508c169cb7d3cb6a24b386361e5"
+        },
+        "date": 1760434305039,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 10497131116,
+            "range": "± 103245505",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 950903,
+            "range": "± 37012",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 48502003621,
+            "range": "± 240833972",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 40071,
+            "range": "± 428",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4601193065,
+            "range": "± 6352873",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2256327845,
+            "range": "± 845010",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17637,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 27610,
+            "range": "± 12",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130046,
+            "range": "± 17",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 148697,
+            "range": "± 21",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 140071,
+            "range": "± 21",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 294,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 307,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 319,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 331,
+            "range": "± 4",
             "unit": "ns/iter"
           }
         ]
