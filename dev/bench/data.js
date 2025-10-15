@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760434305851,
+  "lastUpdate": 1760520632975,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -90307,6 +90307,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 331,
             "range": "± 4",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Hao Luo",
+            "username": "luohao",
+            "email": "luohao135680@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "d8d49cf4b73f916ff27e1995612fbcd4f012dbe3",
+          "message": "chore: add file format version to jni WriteParams (#4820)\n\nThis PR allows setting file format version via WriteParams from Java\nlib.\n\n---------\n\nCo-authored-by: ColdL <newhand.lh@gmail.com>",
+          "timestamp": "2025-10-15T04:40:40Z",
+          "url": "https://github.com/lancedb/lance/commit/d8d49cf4b73f916ff27e1995612fbcd4f012dbe3"
+        },
+        "date": 1760520632087,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8840695046,
+            "range": "± 84581160",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 877962,
+            "range": "± 35528",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 45635538089,
+            "range": "± 571090075",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 38498,
+            "range": "± 332",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4613867215,
+            "range": "± 5145885",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2249991579,
+            "range": "± 630715",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17639,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28612,
+            "range": "± 14",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130056,
+            "range": "± 11",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 148942,
+            "range": "± 20",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139796,
+            "range": "± 64",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 271,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 298,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 294,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 313,
+            "range": "± 8",
             "unit": "ns/iter"
           }
         ]
