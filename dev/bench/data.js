@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760607079265,
+  "lastUpdate": 1760693502655,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -90531,6 +90531,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 296,
             "range": "± 8",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jack Ye",
+            "username": "jackye1995",
+            "email": "yezhaoqin@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "f7bf88234ad04bd0e18eac200dde40b0813aa780",
+          "message": "feat: support mTLS in REST namespace (#4981)\n\nExpected use pattern:\n\n```rust\nuse std::collections::HashMap;\n\nlet mut properties = HashMap::new();\nproperties.insert(\"uri\".to_string(), \"https://api.example.com\".to_string());\nproperties.insert(\"tls.cert_file\".to_string(), \"/path/to/client-cert.pem\".to_string());\nproperties.insert(\"tls.key_file\".to_string(), \"/path/to/client-key.pem\".to_string());\nproperties.insert(\"tls.ssl_ca_cert\".to_string(), \"/path/to/ca-cert.pem\".to_string());\nproperties.insert(\"tls.assert_hostname\".to_string(), \"true\".to_string());\n\nlet namespace = RestNamespace::new(properties);\n```",
+          "timestamp": "2025-10-17T05:34:29Z",
+          "url": "https://github.com/lancedb/lance/commit/f7bf88234ad04bd0e18eac200dde40b0813aa780"
+        },
+        "date": 1760693501827,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9569008702,
+            "range": "± 75422502",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 857060,
+            "range": "± 28983",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 47307123960,
+            "range": "± 404820790",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 39597,
+            "range": "± 544",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4593298113,
+            "range": "± 8201015",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2246811096,
+            "range": "± 2715236",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17635,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 27583,
+            "range": "± 17",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 129846,
+            "range": "± 18",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 148673,
+            "range": "± 36",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 140351,
+            "range": "± 16",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 294,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 302,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 302,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 256,
+            "range": "± 3",
             "unit": "ns/iter"
           }
         ]
