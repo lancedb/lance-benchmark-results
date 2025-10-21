@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1760957389420,
+  "lastUpdate": 1761039177157,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -90979,6 +90979,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 322,
             "range": "± 1",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Xuanwo",
+            "username": "Xuanwo",
+            "email": "github@xuanwo.io"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "33f856bbd4f6e565e4e1d2bf383da7216e73e0bc",
+          "message": "ci: remove not needed actions on our self-hosted runner (#5018)\n\nThis action is not needed since we are on our self-hosted runner.\n\n---\n\n**This PR was primarily authored with Codex using GPT-5-Codex and then\nhand-reviewed by me. I AM responsible for every change made in this PR.\nI aimed to keep it aligned with our goals, though I may have missed\nminor issues. Please flag anything that feels off, I'll fix it\nquickly.**\n\nSigned-off-by: Xuanwo <github@xuanwo.io>",
+          "timestamp": "2025-10-21T09:11:05Z",
+          "url": "https://github.com/lancedb/lance/commit/33f856bbd4f6e565e4e1d2bf383da7216e73e0bc"
+        },
+        "date": 1761039176316,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9475579271,
+            "range": "± 76447645",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1127454,
+            "range": "± 104906",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 49244511145,
+            "range": "± 370697936",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 81822,
+            "range": "± 1105",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4619888753,
+            "range": "± 11412799",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2278711543,
+            "range": "± 888846",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17635,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 27419,
+            "range": "± 18",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130261,
+            "range": "± 21",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149163,
+            "range": "± 35",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139728,
+            "range": "± 13",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 300,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 270,
+            "range": "± 9",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 276,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 261,
+            "range": "± 10",
             "unit": "ns/iter"
           }
         ]
