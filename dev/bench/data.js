@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761039177157,
+  "lastUpdate": 1761125677637,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -91091,6 +91091,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 261,
             "range": "± 10",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "LuQQiu",
+            "username": "LuQQiu",
+            "email": "luqiujob@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "846effe8e30a82c45b6201fcfbd797beb9c66dc9",
+          "message": "fix: handle List types in Substrait field counting (#5015)\n\nError: External error: Runtime error: Error executing query: External\nerror: InvalidArgument: Failed to parse filter expression: IO: IO {\nsource: Substrait(\\\"Named schema must contain names for all fields\\\"),\nlocation: Location { file:\n\\\"/src/lance/rust/lance-datafusion/src/substrait.rs\\\", line: 293,\ncolumn: 9 }\n\nSubstrait encoding/decoding fails when schemas contain `List<Struct>` or\nnested list structures with the error:\n\"Named schema must contain names for all fields\"\n\nThis happens because the `count_fields()` function didn't account for\nList types when counting schema fields, causing a mismatch between the\nexpected and actual number of field names.\n\nEncode/Parse substrait are important for cross node communication /\nexecution. This code path is not hit when running sql locally.",
+          "timestamp": "2025-10-22T02:52:56Z",
+          "url": "https://github.com/lancedb/lance/commit/846effe8e30a82c45b6201fcfbd797beb9c66dc9"
+        },
+        "date": 1761125676788,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8977484003,
+            "range": "± 78726404",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1659174,
+            "range": "± 30327",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 52036358143,
+            "range": "± 514700481",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 82853,
+            "range": "± 1546",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4606367467,
+            "range": "± 4413242",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2281132057,
+            "range": "± 17877171",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17635,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28586,
+            "range": "± 31",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130029,
+            "range": "± 10",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 148783,
+            "range": "± 12",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139465,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 287,
+            "range": "± 29",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 332,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 342,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 349,
+            "range": "± 3",
             "unit": "ns/iter"
           }
         ]
