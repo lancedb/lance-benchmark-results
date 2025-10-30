@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761730155229,
+  "lastUpdate": 1761816621523,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -91985,6 +91985,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 284,
             "range": "± 15",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Will Jones",
+            "username": "wjones127",
+            "email": "willjones127@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "30d34ec4ab3b7adf2aaabce2e8b1ac93713160ba",
+          "message": "ci: add agent  review guidelines (#5098)\n\nThese should be picked up by Codex [^1].\n\n[^1]:\nhttps://developers.openai.com/codex/cloud/code-review#customizing-what-codex-looks-for\n\n---------\n\nCo-authored-by: Weston Pace <weston.pace@gmail.com>",
+          "timestamp": "2025-10-29T19:44:16Z",
+          "url": "https://github.com/lancedb/lance/commit/30d34ec4ab3b7adf2aaabce2e8b1ac93713160ba"
+        },
+        "date": 1761816620743,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 7088676348,
+            "range": "± 47960542",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 880183,
+            "range": "± 10482",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 45746331608,
+            "range": "± 550995858",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 75411,
+            "range": "± 1104",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4559171554,
+            "range": "± 4975069",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2245600265,
+            "range": "± 631317",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17637,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28886,
+            "range": "± 13",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130384,
+            "range": "± 15",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149560,
+            "range": "± 10",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139528,
+            "range": "± 15",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 278,
+            "range": "± 11",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 284,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 301,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 317,
+            "range": "± 5",
             "unit": "ns/iter"
           }
         ]
