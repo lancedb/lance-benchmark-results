@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761816621523,
+  "lastUpdate": 1761903096193,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -92097,6 +92097,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 317,
             "range": "± 5",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "BubbleCal",
+            "username": "BubbleCal",
+            "email": "bubble-cal@outlook.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "2f95f341606220292343dfaa0fa64f5453357067",
+          "message": "feat!: incremental indexing via SPFresh (#4837)\n\nThis PR implements a new incremental indexing mechanism inspired by\nSPFresh, aiming to speed up vector index updates without requiring full\nreindexing.\nIt introduces dynamic partition split/join and reassignment to maintain\nindex quality efficiently.\n\n## Key Changes\n### Partition Split & Join\n- Split triggered when `partition_len > max_part_length`\n- Join triggered when `partition_len < min_part_length`\n### Reassignment (LIRE protocol)\n- Reassign vectors during split/join based on centroid distance.\n### New Parameters\n- max_part_length, 4x target_partition_size\n- min_part_length, 25% target_partition_size\n- reassign_range, 64 according to SPFresh paper\n- max_delta_indices, TODO\n### change `num_indices_to_merge` param of `OptimizeOptions`\n- `num_indices_to_merge` is optional now, and the default is `None` (`1`\nbefore this)\n- `num_indices_to_merge` is `None` indicates to use SPFresh LIRE\nprotocol to automatically handle the delta indices\n\n---------\n\nSigned-off-by: BubbleCal <bubble-cal@outlook.com>",
+          "timestamp": "2025-10-31T06:17:11Z",
+          "url": "https://github.com/lancedb/lance/commit/2f95f341606220292343dfaa0fa64f5453357067"
+        },
+        "date": 1761903095343,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 7246622833,
+            "range": "± 48979089",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 933057,
+            "range": "± 61135",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 45383397423,
+            "range": "± 477418086",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 74213,
+            "range": "± 825",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4583216203,
+            "range": "± 5473830",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2249406972,
+            "range": "± 952923",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17638,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28211,
+            "range": "± 15",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130187,
+            "range": "± 12",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149536,
+            "range": "± 13",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139416,
+            "range": "± 30",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 269,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 294,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 291,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 314,
+            "range": "± 4",
             "unit": "ns/iter"
           }
         ]
