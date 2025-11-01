@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761903096193,
+  "lastUpdate": 1761989498002,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -92209,6 +92209,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 314,
             "range": "± 4",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jack Ye",
+            "username": "jackye1995",
+            "email": "yezhaoqin@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "4cfb99b33c345450a4bef67259e141ebba20c1d6",
+          "message": "fix: forward incompatibility of prerelease in writer version (#5116)\n\nWIth previous CI change, we now use the actual prerelease version as\nwriter version. However, old version cannot parse such version string\nand cause panic.\n\nThis PR makes sure that the version in WriterVersion is always just\nmajor.minor.patch. Any prerelease and build metadata are stored\nseparately and not visible to old clients.",
+          "timestamp": "2025-10-31T20:56:25Z",
+          "url": "https://github.com/lancedb/lance/commit/4cfb99b33c345450a4bef67259e141ebba20c1d6"
+        },
+        "date": 1761989497220,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9713214365,
+            "range": "± 111478710",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 852789,
+            "range": "± 6302",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 45971739488,
+            "range": "± 235576580",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 76486,
+            "range": "± 1601",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4580311963,
+            "range": "± 5124833",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2243798488,
+            "range": "± 609401",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17638,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28652,
+            "range": "± 11",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130241,
+            "range": "± 35",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149278,
+            "range": "± 32",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139415,
+            "range": "± 21",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 280,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 290,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 301,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 316,
+            "range": "± 2",
             "unit": "ns/iter"
           }
         ]
