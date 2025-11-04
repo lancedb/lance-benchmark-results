@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762162287284,
+  "lastUpdate": 1762248840474,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -92545,6 +92545,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 312,
             "range": "± 2",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jinglun",
+            "username": "wojiaodoubao",
+            "email": "belanhd@outlook.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "30889775deaa0b5747acae2ebac62818d5b5b99b",
+          "message": "feat: add fuzziness to json inverted match query (#5048)\n\nhttps://github.com/lancedb/lance/issues/4749\n\nCo-authored-by: lijinglun <lijinglun@bytedance.com>",
+          "timestamp": "2025-11-04T09:21:44Z",
+          "url": "https://github.com/lancedb/lance/commit/30889775deaa0b5747acae2ebac62818d5b5b99b"
+        },
+        "date": 1762248839670,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8833676182,
+            "range": "± 107596282",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1493121,
+            "range": "± 44156",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 50168777375,
+            "range": "± 366699745",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 79278,
+            "range": "± 1750",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4567823781,
+            "range": "± 1771446",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2212657737,
+            "range": "± 278202",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17631,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28634,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130034,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 148885,
+            "range": "± 35",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 140052,
+            "range": "± 12",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 301,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 318,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 321,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 330,
+            "range": "± 1",
             "unit": "ns/iter"
           }
         ]
