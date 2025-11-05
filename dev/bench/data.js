@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762248840474,
+  "lastUpdate": 1762335169493,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -92656,6 +92656,118 @@ window.BENCHMARK_DATA = {
           {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 330,
+            "range": "± 1",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Weston Pace",
+            "username": "westonpace",
+            "email": "weston.pace@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "234137851cafe767535f334fda3c90b21d21c39d",
+          "message": "fix: ensure I/O cancels correctly when scan is dropped (#5129)\n\nPreviously the scheduler took a \"poison the well approach\". When the\nscheduler was dropped, it would poison any remaining tasks so they\nreturned an error.\n\nUnfortunately, this approach is not easily plugged into Datafusion,\nwhich does not have any kind of asynchronous cancellation of the stream.\n\nInstead, Datafusion encourages a \"abort all tasks\" approach when the\nstream is cancelled. This PR migrates things to the \"abort all tasks\"\napproach. It also uses SpawnedTask::spawn in filtered_read instead of\ntokio::task::spawn to create abort-on-drop fire and forget tasks.\n\nIn addition, this PR connects the `io_buffer_size` property to filtered\nread. This scanner property was previously being ignored. I needed it\nfor a unit test.",
+          "timestamp": "2025-11-04T23:31:54Z",
+          "url": "https://github.com/lancedb/lance/commit/234137851cafe767535f334fda3c90b21d21c39d"
+        },
+        "date": 1762335168691,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8611160016,
+            "range": "± 65426015",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1398936,
+            "range": "± 95446",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 50044353503,
+            "range": "± 291298020",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 79616,
+            "range": "± 1573",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4570336494,
+            "range": "± 8648191",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2263543541,
+            "range": "± 2318982",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17638,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28899,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130193,
+            "range": "± 34",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149436,
+            "range": "± 24",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 139454,
+            "range": "± 8",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 299,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 317,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 323,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 335,
             "range": "± 1",
             "unit": "ns/iter"
           }
