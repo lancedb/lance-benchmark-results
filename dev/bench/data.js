@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762421514000,
+  "lastUpdate": 1762507864844,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -92879,6 +92879,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 322,
             "range": "± 6",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jack Ye",
+            "username": "jackye1995",
+            "email": "yezhaoqin@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "3f74e8564d9b0b890382e78cb3d8ecd28d3ae143",
+          "message": "ci!: move to semantic versioning release mechanism (#5089)\n\nThis PR moves the release mechanism to follow the semantic versioning\nstandard with a streamlined RC voting process and automated breaking\nchange detection. See `release_process.md` for the updated workflow and\nexamples.",
+          "timestamp": "2025-11-07T01:15:43Z",
+          "url": "https://github.com/lancedb/lance/commit/3f74e8564d9b0b890382e78cb3d8ecd28d3ae143"
+        },
+        "date": 1762507863988,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 9229184039,
+            "range": "± 72363009",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 858309,
+            "range": "± 35082",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 45053850517,
+            "range": "± 679149468",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 76086,
+            "range": "± 2152",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4577319445,
+            "range": "± 2030412",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2251047356,
+            "range": "± 553634",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17638,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 27547,
+            "range": "± 51",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130361,
+            "range": "± 18",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149651,
+            "range": "± 57",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 140446,
+            "range": "± 30",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 284,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 294,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 304,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 317,
+            "range": "± 2",
             "unit": "ns/iter"
           }
         ]
