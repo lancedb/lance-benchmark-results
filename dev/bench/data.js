@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762594250987,
+  "lastUpdate": 1762680560961,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -93102,6 +93102,118 @@ window.BENCHMARK_DATA = {
           {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 321,
+            "range": "± 3",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jinglun",
+            "username": "wojiaodoubao",
+            "email": "belanhd@outlook.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "664fb9036541db6aa8058e108b4b374055b0bc90",
+          "message": "fix: merge struct array use wrong child values (#5106)\n\nWhen I work with a dataset using struct column below, I got error\n'Incorrect array length for StructArray field type, expected 5 got\n3019'.\n```\nTotal rows: 1000\nTotal items of 'type': 3019\n\nSchema: map_data: list<item: struct<lane_dir: large_string, type: int64, xyz: list<item: list<item: double>>>>\n  child 0, item: struct<lane_dir: large_string, type: int64, xyz: list<item: list<item: double>>>\n      child 0, lane_dir: large_string\n      child 1, type: int64\n      child 2, xyz: list<item: list<item: double>>\n          child 0, item: list<item: double>\n              child 0, item: double\n```\n\nIt is caused by values not correctly read when processing the child\nlist.\n\n---------\n\nCo-authored-by: lijinglun <lijinglun@bytedance.com>",
+          "timestamp": "2025-11-08T12:20:09Z",
+          "url": "https://github.com/lancedb/lance/commit/664fb9036541db6aa8058e108b4b374055b0bc90"
+        },
+        "date": 1762680560109,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 7505745540,
+            "range": "± 42604366",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 830538,
+            "range": "± 3642",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 43459933660,
+            "range": "± 607022227",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 73604,
+            "range": "± 1102",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4583376501,
+            "range": "± 1843303",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 2246493663,
+            "range": "± 617019",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17637,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28380,
+            "range": "± 14",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 129937,
+            "range": "± 34",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149068,
+            "range": "± 29",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 140004,
+            "range": "± 16",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 264,
+            "range": "± 8",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 290,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 291,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 307,
             "range": "± 3",
             "unit": "ns/iter"
           }
