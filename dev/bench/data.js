@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762767208774,
+  "lastUpdate": 1762853609317,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -93327,6 +93327,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 341,
             "range": "± 2",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Lei Xu",
+            "username": "eddyxu",
+            "email": "lei@lancedb.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "96cfdf2143d7422ee107e0405a636f79a16ace70",
+          "message": "chore: simplify dot implementation to use auto-vectorization (#2645)\n\nThis change makes the auto-vectorization version of dot(f32) as fast as\nmanually written SIMD.\n\nRun benchmarks via\n\n```\nexport RUSTFLAGS=\"-C target-cpu=native\"\ngit checkout main\ncargo bench --bench dot -- --save-baseline dot_main f32\ngit checkout lei/simplify_dot\ncargo bench --bench dot -- --baseline dot_main f32\n```\n\nOn Macbook M2 Max\n```\nDot(f32, auto-vectorization)\n                        time:   [88.812 ms 89.654 ms 90.306 ms]\n                        change: [-2.5819% -1.6876% -0.6964%] (p = 0.01 < 0.10)\n                        Change within noise threshold.\n```\n\nAMD 5900X\n\n```\nDot(f32, auto-vectorization)\n                        time:   [172.50 ms 176.41 ms 179.41 ms]\n                        change: [-2.3545% +0.6133% +3.5448%] (p = 0.69 > 0.10)\n                        No change in performance detected.\n```\n\nIntel Sapphire\n\n```\nDot(f32, auto-vectorization)\n                        time:   [331.36 ms 331.62 ms 331.93 ms]\n                        change: [-2.3160% -1.1226% -0.3451%] (p = 0.04 < 0.10)\n                        Change within noise threshold.\n```\n\nGraviton3\n\n```\nBenchmarking Dot(f32, auto-vectorization): Warming up for 3.0000 s\nWarning: Unable to complete 10 samples in 5.0s. You may wish to increase target time to 8.8s or enable flat sampling.\nDot(f32, auto-vectorization)\n                        time:   [160.62 ms 160.70 ms 160.76 ms]\n                        change: [-1.1157% -0.6868% -0.2951%] (p = 0.00 < 0.10)\n                        Change within noise threshold.\nFound 1 outliers among 10 measurements (10.00%)\n  1 (10.00%) low mild\n```",
+          "timestamp": "2025-11-10T19:51:59Z",
+          "url": "https://github.com/lancedb/lance/commit/96cfdf2143d7422ee107e0405a636f79a16ace70"
+        },
+        "date": 1762853608502,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 8992906778,
+            "range": "± 110553404",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1638355,
+            "range": "± 23038",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 51362829375,
+            "range": "± 363173208",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 82146,
+            "range": "± 1443",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4589632127,
+            "range": "± 1575568",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 4195441051,
+            "range": "± 7631201",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17630,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 27378,
+            "range": "± 248",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130145,
+            "range": "± 22",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149844,
+            "range": "± 26",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 140047,
+            "range": "± 12",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 315,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 331,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 337,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 350,
+            "range": "± 3",
             "unit": "ns/iter"
           }
         ]
