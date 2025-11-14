@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763026358671,
+  "lastUpdate": 1763112563394,
   "repoUrl": "https://github.com/lancedb/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -93663,6 +93663,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 325,
             "range": "± 1",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jack Ye",
+            "username": "jackye1995",
+            "email": "yezhaoqin@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "8b3da7f99af8ce74a8049759a0d1bc3f584b61ae",
+          "message": "feat: add adapter for REST namespace with manifest namespace backend (#4984)\n\nThis PR introduces an adapter (using Axum) that provides a REST server\nwhich delegates requests to be fulfilled by another Lance namespace.\nThis is helpful for easy setup of a REST namespace server to perform\ntesting.\n\nIn addition, I added a namespace implementation backed by a Lance table,\nbasically the same thing as\nhttps://github.com/lancedb/lancedb/pull/2708, also have\nDirectoryNamespace able to use it in a compatibility mode.\n\nI moved it here as a namespace implementation, because (1) this allows\nus to fully test tables in a namespace with storage only requirement,\nand at the same time, (2) comparing to offer this in lancedb directly,\nwe know we want to consolidate the local listing connection and remote\nconnection as just 2 types of namespace connections, and this gives user\nan incentive to move to the namespace-based connection in lancedb for\nthe local one\n\nAlso add corresponding python binding for DirectoryNamespace and\nRestNamespace, deprecate the current ones in lance-namespace python\npackage",
+          "timestamp": "2025-11-14T08:44:10Z",
+          "url": "https://github.com/lancedb/lance/commit/8b3da7f99af8ce74a8049759a0d1bc3f584b61ae"
+        },
+        "date": 1763112562507,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 6944404777,
+            "range": "± 54471666",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 825907,
+            "range": "± 3088",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 37456659023,
+            "range": "± 293200759",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 75219,
+            "range": "± 1409",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 4594268654,
+            "range": "± 1880577",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 4108059147,
+            "range": "± 1280547",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 17629,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 28844,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130358,
+            "range": "± 27",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 149940,
+            "range": "± 26",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 141172,
+            "range": "± 17",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 222,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 240,
+            "range": "± 8",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 241,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 254,
+            "range": "± 7",
             "unit": "ns/iter"
           }
         ]
