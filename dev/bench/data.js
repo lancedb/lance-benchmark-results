@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763578040420,
+  "lastUpdate": 1763578129173,
   "repoUrl": "https://github.com/lance-format/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -94659,6 +94659,116 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 354,
             "range": "± 3",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "lance-format",
+            "username": "lance-format"
+          },
+          "committer": {
+            "name": "lance-format",
+            "username": "lance-format"
+          },
+          "id": "804da9d1007505841fd44eaeb099b8918cfa3df7",
+          "message": "ci: migrate to github hosted runners",
+          "timestamp": "2025-11-19T16:24:35Z",
+          "url": "https://github.com/lance-format/lance/pull/5287/commits/804da9d1007505841fd44eaeb099b8918cfa3df7"
+        },
+        "date": 1763578128240,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 10026132074,
+            "range": "± 67269145",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1071423,
+            "range": "± 5781",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 55617434534,
+            "range": "± 2800591646",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 115368,
+            "range": "± 2141",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 5502020246,
+            "range": "± 758023",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 5236592223,
+            "range": "± 1242253",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 14606,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 31114,
+            "range": "± 52",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130233,
+            "range": "± 32",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 152537,
+            "range": "± 67",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 141758,
+            "range": "± 10",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 309,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 362,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 329,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 322,
+            "range": "± 5",
             "unit": "ns/iter"
           }
         ]
