@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763632545000,
+  "lastUpdate": 1763717682218,
   "repoUrl": "https://github.com/lance-format/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -94879,6 +94879,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 393,
             "range": "± 5",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Prashanth Rao",
+            "username": "prrao87",
+            "email": "35005448+prrao87@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "abce5a5a7c05d515c3b0edf6add3f95518390ecc",
+          "message": "docs: fix broken links and 404s (#5284)\n\nCo-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>",
+          "timestamp": "2025-11-21T01:14:51Z",
+          "url": "https://github.com/lance-format/lance/commit/abce5a5a7c05d515c3b0edf6add3f95518390ecc"
+        },
+        "date": 1763717680644,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 10705968432,
+            "range": "± 58417586",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1159644,
+            "range": "± 4413",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 54368983720,
+            "range": "± 3133792714",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 121021,
+            "range": "± 4454",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 5509384154,
+            "range": "± 1279670",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 5245735708,
+            "range": "± 1487057",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 14611,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 30968,
+            "range": "± 21",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130029,
+            "range": "± 68",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 152645,
+            "range": "± 28",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 142265,
+            "range": "± 43",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 322,
+            "range": "± 9",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 313,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 330,
+            "range": "± 8",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 350,
+            "range": "± 19",
             "unit": "ns/iter"
           }
         ]
