@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763717682218,
+  "lastUpdate": 1763804135622,
   "repoUrl": "https://github.com/lance-format/lance",
   "entries": {
     "Lance Rust Benchmarks": [
@@ -94991,6 +94991,118 @@ window.BENCHMARK_DATA = {
             "name": "ScalarQuantizationStorage,chunks=1024x10K",
             "value": 350,
             "range": "± 19",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Jack Ye",
+            "username": "jackye1995",
+            "email": "yezhaoqin@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "2e21599fd6887b1649e0359f92b12362ce04031f",
+          "message": "chore: remove ignore_namespace_table_storage_options=True in namespace integration test (#5319)",
+          "timestamp": "2025-11-22T07:29:55Z",
+          "url": "https://github.com/lance-format/lance/commit/2e21599fd6887b1649e0359f92b12362ce04031f"
+        },
+        "date": 1763804134441,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "create_hnsw(10240x512,levels=6)",
+            "value": 10010089801,
+            "range": "± 88963556",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "search_hnsw10240x512, levels=6",
+            "value": 1089159,
+            "range": "± 3473",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_indexing(1000000)",
+            "value": 60160515405,
+            "range": "± 1475902649",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "invert_search(1000000)",
+            "value": 120009,
+            "range": "± 2565",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "l2,32768",
+            "value": 5506970538,
+            "range": "± 683596",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "dot,32768",
+            "value": 5240866056,
+            "range": "± 726050",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: l2,PQ=16,DIM=128",
+            "value": 14608,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "construct_dist_table: dot,PQ=16,DIM=128",
+            "value": 30781,
+            "range": "± 41",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,l2,PQ=16,DIM=128",
+            "value": 130264,
+            "range": "± 45",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,cosine,PQ=16,DIM=128",
+            "value": 152452,
+            "range": "± 42",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "compute_distances: 16000,dot,PQ=16,DIM=128",
+            "value": 142238,
+            "range": "± 46",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1x10K",
+            "value": 341,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=32x10K",
+            "value": 353,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=128x10K",
+            "value": 346,
+            "range": "± 9",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ScalarQuantizationStorage,chunks=1024x10K",
+            "value": 348,
+            "range": "± 8",
             "unit": "ns/iter"
           }
         ]
